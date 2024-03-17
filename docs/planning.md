@@ -25,6 +25,9 @@ Tengas un pequeño balcón, huerto urbano o una parcela para autoconsumo con App
 - https://www.lahuertinadetoni.es/5-aplicaciones-para-organizar-nuestro-huerto/
 
 ## User Story Map y User Flow
+#### User definition:
+Los usuarios de la aplicación son personas que tienen o están proyectando un huerto particular de autoconsumo. En las fases iniciales del proyecto no se contempla la funcionalidad de login, la gestión usuarios, roles ni privilegios.
+
 [Ver en MURAL](https://app.mural.co/t/appio3426/m/appio3426/1710620098043/97c69d7dc8d74de37a80f5fbcd6c60aaf8a81306?sender=u4d17ff63ec1d3f769d9d4687)
 
 ![Appio Story Map](/docs/imgs/Appio_2024-03-17_22-36-43.png)
