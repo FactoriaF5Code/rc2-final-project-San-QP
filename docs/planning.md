@@ -32,3 +32,7 @@ Los usuarios de la aplicación son personas que tienen o están proyectando un h
 
 ![Appio Story Map](/docs/imgs/Appio_2024-03-17_22-36-43.png)
 ![Appio User Flow](/docs/imgs/Appio_2024-03-19_17-23-28.png)
+
+## User Interface:
+🚧 Work in progress
+[Ver en FIGMA](https://www.figma.com/file/6iOLLiQ8v6psUb8yJzibZ8/Appio?type=design&node-id=0%3A1&mode=design&t=nvltldElDq2BYEtr-1)
