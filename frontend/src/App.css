@@ -20,10 +20,5 @@ html {
 }
 
 body {
-  background-color: #122925;
   color:var(--color-light);
-}
-
-header {
-  padding: 3rem 0;
 }

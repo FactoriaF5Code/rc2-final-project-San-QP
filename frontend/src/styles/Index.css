@@ -1,0 +1,85 @@
+header {
+    padding: 3rem 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.index {
+    min-height: 100vh;
+    background-color: var(--color-dark-green);
+    background-image: url('../../public/index-background.jpg');
+    background-blend-mode: soft-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indexContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5rem;
+}
+
+.indexContent img {
+    width: 50rem;
+}
+
+.indexContent a {
+    color: var(--color-dark-green);
+    background-color: var(--color-fluor-green);
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 2.5rem 4rem;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.indexContent a:hover {
+    background-color: var(--color-red);
+    color: var(--color-light);
+    font-weight: 300;
+}
+
+
+.up:hover,
+.up:focus {
+    box-shadow: inset 0 -3.25em 0 0 #e4cb58;
+}
+
+
+// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
+button {
+    color: var(--color);
+    transition: 0.25s;
+
+    &:hover,
+    &:focus {
+        border-color: var(--hover);
+        color: #fff;
+    }
+}
+
+
+// Basic button styles
+button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+code {
+    color: #e4cb58;
+    font: inherit;
+}
