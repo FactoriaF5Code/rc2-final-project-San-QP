@@ -19,7 +19,7 @@ Tengas un pequeño balcón, huerto urbano o una parcela para autoconsumo con App
 
 
 #### Aplicaciones relacionadas
-- 	https://icultor.com/
+- https://icultor.com/
 - https://kitchengarden.sourceforge.net/index.html
 - https://www.gardena.com/es/c/descubra/herramientas-de-planificacion-de-myGarden/planificador-de-jardines
 - https://www.lahuertinadetoni.es/5-aplicaciones-para-organizar-nuestro-huerto/
