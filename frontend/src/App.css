@@ -18,7 +18,3 @@ html {
   --color-fluor-green: #00FF85;
   --color-red: #DE1D20;
 }
-
-body {
-  color:var(--color-light);
-}

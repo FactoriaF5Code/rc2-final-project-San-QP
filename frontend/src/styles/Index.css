@@ -8,6 +8,7 @@ header {
     min-height: 100vh;
     background-color: var(--color-dark-green);
     background-image: url('../../public/index-background.jpg');
+    background-position: center;
     background-blend-mode: soft-light;
     display: flex;
     align-items: center;
@@ -24,6 +25,7 @@ header {
 
 .indexContent img {
     width: 50rem;
+    mix-blend-mode:screen;
 }
 
 .indexContent a {
@@ -43,43 +45,4 @@ header {
     background-color: var(--color-red);
     color: var(--color-light);
     font-weight: 300;
-}
-
-
-.up:hover,
-.up:focus {
-    box-shadow: inset 0 -3.25em 0 0 #e4cb58;
-}
-
-
-// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
-button {
-    color: var(--color);
-    transition: 0.25s;
-
-    &:hover,
-    &:focus {
-        border-color: var(--hover);
-        color: #fff;
-    }
-}
-
-
-// Basic button styles
-button {
-    background: none;
-    border: 2px solid;
-    font: inherit;
-    line-height: 1;
-    margin: 0.5em;
-    padding: 1em 2em;
-}
-
-h1 {
-    font-weight: 400;
-}
-
-code {
-    color: #e4cb58;
-    font: inherit;
 }
