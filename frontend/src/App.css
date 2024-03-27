@@ -17,4 +17,5 @@ html {
   --color-dark-green: #122925;
   --color-fluor-green: #00FF85;
   --color-red: #DE1D20;
+  --effect-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }

@@ -6,7 +6,7 @@ import "../styles/Panel.css";
 export const Panel = () => {
   return (
     <>
-      <header>
+      <header className="mainHeader">
         <MainNav
           textColor="var(--color-dark-green)"
           backgroundColor="var(--color-light)"
@@ -15,7 +15,7 @@ export const Panel = () => {
       <main className="panel">
         <div className="panelContent">
           <div className="panelContent_title">
-            <img src="../../public/AppioLogoSimple.svg" alt="Logo Appio" />
+            <img src="/AppioLogoSimple.svg" alt="Logo Appio" />
             <p>
               Da tus primeros pasos hacia la autosuficiencia y la soberanía
               alimentaria, impulsando un mundo más justo y sostenible.

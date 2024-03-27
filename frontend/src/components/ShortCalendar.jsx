@@ -4,7 +4,7 @@ export const ShortCalendar = () => {
   return (
     <section className="panelContent_Calendar">
       <div className="panelContent_Calendar_Moon">
-        <img src="../../public/MOON-icon.svg" alt="icono luna creciente" />
+        <img src="/MOON-icon.svg" alt="icono luna creciente" />
         <p>CRECIENTE</p>
         <div>
           <hr />

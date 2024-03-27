@@ -1,4 +1,4 @@
-header {
+.mainHeader {
     padding: 3rem 0;
     position: absolute;
     z-index: 1;
@@ -7,7 +7,7 @@ header {
 .panel {
     min-height: 100vh;
     background-color: var(--color-light);
-    background-image: url('../../public/index-background.jpg');
+    background-image: url('/index-background.jpg');
     background-position: center;
     background-blend-mode: soft-light;
     display: flex;
@@ -23,7 +23,6 @@ header {
     max-width: 120rem;
     min-height: 100vh;
     gap:4rem;
-    /* outline: 1px solid red; */
 }
 
 .panelContent_title {
@@ -31,7 +30,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* outline: 1px solid red; */
 }
 
 .panelContent_title img {
@@ -65,7 +63,6 @@ header {
     align-items: center;
     justify-content: center;
     height: 31rem;
-    /* outline: 1px solid red; */
 }
 
 .panelContent_Calendar_Moon img {
@@ -94,7 +91,6 @@ header {
 
 .panelContent_Calendar_Tasks {
     flex: 1;
-    /* outline: 1px solid red; */
     height: 31rem;
     display: flex;
     flex-direction: column;

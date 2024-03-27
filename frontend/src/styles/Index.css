@@ -1,4 +1,4 @@
-header {
+.mainHeader {
     padding: 3rem 0;
     position: absolute;
     z-index: 1;
@@ -7,7 +7,7 @@ header {
 .index {
     min-height: 100vh;
     background-color: var(--color-dark-green);
-    background-image: url('../../public/index-background.jpg');
+    background-image: url('/index-background.jpg');
     background-position: center;
     background-blend-mode: soft-light;
     display: flex;

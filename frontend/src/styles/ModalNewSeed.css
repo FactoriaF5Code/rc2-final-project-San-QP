@@ -1,0 +1,84 @@
+.newSeed {
+    position: absolute;
+    background-color: #122925be;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newSeed_Modal {
+    background-color: var(--color-dark-green);
+    width: 50%;
+    padding:5rem;
+    border-radius: 4rem;
+}
+
+.newSeed_Modal_Header{
+    display: flex;
+    color:var(--color-light);
+    justify-content: space-between;
+    align-items: top;
+    position: relative;
+}
+
+.newSeed_Modal h1{
+    font-size: 4.2rem;
+    padding: none;
+    margin:none;
+}
+
+.seedName{
+    width: 50%;
+}
+
+.newSeed_ModalContent input {
+    background-color: transparent;
+    border: 1px solid var(--color-light);
+    border-radius: 1rem;
+    padding:1rem 1.8rem;
+    outline: none;
+    margin-top:1rem;
+}
+
+.newSeed_ModalContent input::placeholder{
+    color:var(--color-light);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.newSeed_ModalContent_inputs {
+    color: var(--color-light);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2.4rem;
+    display: flex;
+}
+
+.newSeed_ModalContent_inputs div input{
+    outline: 1px solid red;
+}
+
+[type="date"], [type="number"] {
+    color:var(--color-light);
+}
+
+.newSeed_ModalContent label {
+    color: var(--color-light);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2.4rem;
+}
+
+.moreDetails{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+}
+
+.newSeed_saveButton{
+    display: flex;
+    justify-content: center;
+
+}

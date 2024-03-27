@@ -1,6 +1,6 @@
 import "../styles/MainNav.css";
 
-export const MainNav = ({ textColor, backgroundColor }) => {
+export const MainNav = ({ textColor }) => {
   return (
     <nav>
         <ul className="mainNav">
