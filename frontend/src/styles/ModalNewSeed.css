@@ -23,62 +23,70 @@
     position: relative;
 }
 
-.newSeed_Modal h1{
+.newSeed_Modal_Header h1 {
     font-size: 4.2rem;
-    padding: none;
-    margin:none;
 }
 
-.seedName{
+.newSeed_Modal_Content_Form_Inputs {
+    outline: 1px solid green;
+    padding: 2rem 0;
+}
+
+.seedName {
     width: 50%;
-}
-
-.newSeed_ModalContent input {
-    background-color: transparent;
-    border: 1px solid var(--color-light);
-    border-radius: 1rem;
-    padding:1rem 1.8rem;
-    outline: none;
-    margin-top:1rem;
-}
-
-.newSeed_ModalContent input::placeholder{
-    color:var(--color-light);
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-.newSeed_ModalContent_inputs {
-    color: var(--color-light);
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 2.4rem;
-    display: flex;
-}
-
-.newSeed_ModalContent_inputs div input{
     outline: 1px solid red;
 }
 
-[type="date"], [type="number"] {
-    color:var(--color-light);
+/*Estilo de los inputs*/
+.newSeed_Modal_Content_Form_Inputs input, .newSeed_Modal_Content_Form_InputsDetails textarea{
+    background-color: transparent;
+    border: 1px solid var(--color-light);
+    border-radius: 1rem;
+    padding: 1.6rem 1.5rem;
+    outline: none;
 }
 
-.newSeed_ModalContent label {
+.newSeed_Modal_Content_Form_Inputs input::placeholder, [type="date"], [type="number"] {
     color: var(--color-light);
+    opacity: 50%;
     font-size: 1.5rem;
-    font-weight: 500;
-    margin-top: 2.4rem;
 }
 
-.moreDetails{
+[type="date"], [type="number"] {
+    color: var(--color-light);
+}
+
+.newSeed_Modal_Content_Form_InputsProps {
+    outline: 1px solid yellow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.newSeed_Modal_Content_Form_InputsProps div {
+    outline: 1px solid blue;
     display: flex;
     flex-direction: column;
-    margin-bottom: 4rem;
 }
 
-.newSeed_saveButton{
+.seedDate{
+    flex: 2;
+}
+
+.seedFrom, .seedGeneration {
+    flex: 1;
+
+}
+
+.newSeed_Modal_Content_Form_InputsDetails {
+    outline: 1px solid purple;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Estilo del espacio contenedor del botón*/
+.newSeed_Modal_Content_Form_Button{
     display: flex;
     justify-content: center;
-
 }

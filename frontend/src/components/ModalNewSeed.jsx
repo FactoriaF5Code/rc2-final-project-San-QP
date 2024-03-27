@@ -9,31 +9,36 @@ export const ModalNewSeed = () => {
           <h1>Nueva especie</h1>
           <IconClose />
         </header>
-        <body className="newSeed_ModalContent">
-          <form action="" className="newSeed_ModalContent_Form">
-            <input type="text" placeholder="Nombre de la especie" className="seedName" />
-            <section className="newSeed_ModalContent_inputs">
-              <div>
-                <label htmlFor="">¿De dónde vienen tus semillas?</label>
-                <input type="text" />
-              </div>
-              <div>
-                <label htmlFor="">Fecha de recogida:</label>
-                <input type="date" />
-              </div>
-              <div>
-                <label htmlFor="">Generación:</label>
-                <input type="number" />
-              </div>
-            </section>
-            <div className="moreDetails">
-              <label htmlFor="">Más detalles:</label>
+        <body className="newSeed_Modal_Content">
+          <form action="" className="newSeed_Modal_Content_Form">
+            <section className="newSeed_Modal_Content_Form_Inputs">
               <input
                 type="text"
-                placeholder="Cantidad de semillas, características de la especie, resistencias a hongos y plagas, consejos de siembra..."
+                placeholder="Nombre de la especie"
+                className="seedName"
               />
-            </div>
-            <div className="newSeed_saveButton">
+              <fieldset className="newSeed_Modal_Content_Form_InputsProps">
+                <div className="inputProps_From">
+                  <label htmlFor="">¿De dónde vienen tus semillas?</label>
+                  <input type="text" className="seedFrom" maxLength="150" />
+                </div>
+                <div>
+                  <label htmlFor="">Fecha de recogida:</label>
+                  <input type="date" className="seedDate" />
+                </div>
+                <div>
+                  <label htmlFor="">Generación:</label>
+                  <input type="number" className="seedGeneration" min="0"/>
+                </div>
+              </fieldset>
+              <fieldset className="newSeed_Modal_Content_Form_InputsDetails">
+                <label htmlFor="">Más detalles:</label>
+                <textarea placeholder="Cantidad de semillas, características de la especie, resistencias a hongos y plagas, consejos de siembra...">
+                </textarea>
+
+              </fieldset>
+            </section>
+            <div className="newSeed_Modal_Content_Form_Button">
               <button className="fluorButton" id="saveButton">
                 GUARDAR
               </button>
