@@ -20,7 +20,7 @@ export const ModalNewSeed = () => {
               <fieldset className="newSeed_Modal_Content_Form_InputsProps">
                 <div className="inputProps_From">
                   <label htmlFor="">¿De dónde vienen tus semillas?</label>
-                  <input type="text" className="seedFrom" maxLength="150" />
+                  <input type="text" className="seedFrom" />
                 </div>
                 <div>
                   <label htmlFor="">Fecha de recogida:</label>

@@ -1,6 +1,6 @@
 .newSeed {
     position: absolute;
-    background-color: #122925be;
+    background-color: #122925d0;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -13,6 +13,7 @@
     width: 50%;
     padding:5rem;
     border-radius: 4rem;
+    box-shadow: 0px 4px 5.8px 0px #000000a1;
 }
 
 .newSeed_Modal_Header{
@@ -28,13 +29,19 @@
 }
 
 .newSeed_Modal_Content_Form_Inputs {
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
     padding: 2rem 0;
+}
+
+.newSeed_Modal_Content_Form_Inputs fieldset{
+    outline: none;
+    border: none;
+    margin-top: 2.4rem;
 }
 
 .seedName {
     width: 50%;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 /*Estilo de los inputs*/
@@ -44,20 +51,30 @@
     border-radius: 1rem;
     padding: 1.6rem 1.5rem;
     outline: none;
+    color: var(--color-light);
 }
 
-.newSeed_Modal_Content_Form_Inputs input::placeholder, [type="date"], [type="number"] {
-    color: var(--color-light);
-    opacity: 50%;
-    font-size: 1.5rem;
-}
 
 [type="date"], [type="number"] {
     color: var(--color-light);
 }
 
+.newSeed_Modal_Content_Form_Inputs input::placeholder, [type="date"], [type="number"], .newSeed_Modal_Content_Form_InputsDetails textarea::placeholder {
+    color: var(--color-light);
+    opacity: 50%;
+    font-size: 1.5rem;
+}
+
+.newSeed_Modal_Content_Form_Inputs input:focus {
+    color: var(--color-light);
+}
+
+.newSeed_Modal_Content_Form_Inputs input:target{
+color: var(--color-light);
+}
+
 .newSeed_Modal_Content_Form_InputsProps {
-    outline: 1px solid yellow;
+    /* outline: 1px solid yellow; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,22 +82,20 @@
 }
 
 .newSeed_Modal_Content_Form_InputsProps div {
-    outline: 1px solid blue;
+    /* outline: 1px solid blue; */
     display: flex;
     flex-direction: column;
-}
-
-.seedDate{
-    flex: 2;
-}
-
-.seedFrom, .seedGeneration {
     flex: 1;
+}
 
+.newSeed_Modal_Content_Form_InputsProps label, .newSeed_Modal_Content_Form_InputsDetails label{
+    color: var(--color-light);
+    font-size: 1.5rem;
+    
 }
 
 .newSeed_Modal_Content_Form_InputsDetails {
-    outline: 1px solid purple;
+    /* outline: 1px solid purple; */
     display: flex;
     flex-direction: column;
 }
