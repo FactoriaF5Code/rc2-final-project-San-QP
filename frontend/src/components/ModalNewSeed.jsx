@@ -1,13 +1,24 @@
 import "../styles/ModalNewSeed.css";
 import { IconClose } from "../assets/svg/IconClose";
+import { useState } from "react";
 
-export const ModalNewSeed = () => {
+export const ModalNewSeed = ({ closeModal }) => {
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleOptionChange  = (event) => {
+    setSelectedOption(event.target.value);
+  }
+
   return (
     <section className="newSeed">
       <div className="newSeed_Modal">
         <header className="newSeed_Modal_Header">
           <h1>Nueva especie</h1>
-          <IconClose />
+          <button
+            className="buttonClose"
+            onClick={ closeModal }>
+           <IconClose/>
+          </button>
         </header>
         <body className="newSeed_Modal_Content">
           <form action="" className="newSeed_Modal_Content_Form">
@@ -20,16 +31,26 @@ export const ModalNewSeed = () => {
               <fieldset className="newSeed_Modal_Content_Form_InputsProps">
                 <div className="inputProps_From">
                   <label htmlFor="">¿De dónde vienen tus semillas?</label>
-                  <input type="text" className="seedFrom" />
+
+                  <select className="seedFrom" onChange={handleOptionChange} value={selectedOption}>
+                    <option value="">-- Selecciona el origen --</option>
+                    <option value="Recogida">Recogida</option>
+                    <option value="Intercambio">Intercambio</option>
+                    <option value="Compra">Compra</option>
+                  </select>
                 </div>
-                <div>
+                {selectedOption === "Recogida" && (
+                <>
+                <div className="pickUp_Options_Active">
                   <label htmlFor="">Fecha de recogida:</label>
                   <input type="date" className="seedDate" />
                 </div>
-                <div>
+                <div className="pickUp_Options_Active">
                   <label htmlFor="">Generación:</label>
                   <input type="number" className="seedGeneration" min="0"/>
                 </div>
+                </>
+                )}
               </fieldset>
               <fieldset className="newSeed_Modal_Content_Form_InputsDetails">
                 <label htmlFor="">Más detalles:</label>

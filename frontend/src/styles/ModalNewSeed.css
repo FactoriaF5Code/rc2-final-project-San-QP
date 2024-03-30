@@ -45,7 +45,7 @@
 }
 
 /*Estilo de los inputs*/
-.newSeed_Modal_Content_Form_Inputs input, .newSeed_Modal_Content_Form_InputsDetails textarea{
+.newSeed_Modal_Content_Form_Inputs input, .newSeed_Modal_Content_Form_InputsDetails textarea, .seedFrom {
     background-color: transparent;
     border: 1px solid var(--color-light);
     border-radius: 1rem;
@@ -54,6 +54,18 @@
     color: var(--color-light);
 }
 
+option {
+    background-color: var(--color-dark-green);
+    border: 1px solid var(--color-dark-green);
+    outline: none;
+}
+
+
+.pickUp_Options_Active{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
 
 [type="date"], [type="number"] {
     color: var(--color-light);
@@ -73,19 +85,18 @@
 color: var(--color-light);
 }
 
+.inputProps_From{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .newSeed_Modal_Content_Form_InputsProps {
     /* outline: 1px solid yellow; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-}
-
-.newSeed_Modal_Content_Form_InputsProps div {
-    /* outline: 1px solid blue; */
-    display: flex;
-    flex-direction: column;
-    flex: 1;
 }
 
 .newSeed_Modal_Content_Form_InputsProps label, .newSeed_Modal_Content_Form_InputsDetails label{
@@ -104,4 +115,10 @@ color: var(--color-light);
 .newSeed_Modal_Content_Form_Button{
     display: flex;
     justify-content: center;
+}
+
+.buttonClose{
+    background: transparent;
+    border: none;
+    cursor: pointer;
 }

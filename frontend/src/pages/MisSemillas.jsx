@@ -2,15 +2,29 @@ import { Link } from "react-router-dom";
 import { Menu } from "../components/Menu";
 import { BackHomeLink } from "../components/BackHomeLink";
 import { IconSearch } from "../assets/svg/IconSearch";
-import { TableSeeds } from '../components/TableSeeds'
+import { TableSeeds } from "../components/TableSeeds";
 import { ModalNewSeed } from "../components/ModalNewSeed";
 import "../styles/MiHuerto.css";
 import "../styles/MisSemillas.css";
+import { useState } from "react";
 
 export const MisSemillas = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  }
+
   return (
     <>
-      <ModalNewSeed />
+      { isModalOpen && (
+      <ModalNewSeed
+        closeModal = {closeModal}
+      />)}
       <header className="mainHeader">
         <BackHomeLink />
       </header>
@@ -37,7 +51,11 @@ export const MisSemillas = () => {
                 </button>
                 <input type="search" placeholder={"Buscar en mis semillas"} />
               </div>
-              <button className="fluorButton">+ AÑADIR ESPECIE</button>
+              <button
+                className="fluorButton"
+                onClick={openModal}>
+                + AÑADIR ESPECIE
+              </button>
             </div>
             <TableSeeds />
           </section>
