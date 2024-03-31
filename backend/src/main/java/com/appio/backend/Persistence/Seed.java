@@ -16,12 +16,12 @@ public class Seed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private SeedOriginEnum origin;
+    private String origin;
     private Date pick_up_date;
     private Integer generation;
     private String description;
 
-    public Seed(String name, SeedOriginEnum origin, Date pick_up_date, Integer generation, String description) {
+    public Seed(String name, String origin, Date pick_up_date, Integer generation, String description) {
         this.name = name;
         this.origin = origin;
         this.pick_up_date = pick_up_date;
@@ -49,11 +49,11 @@ public class Seed {
         this.name = name;
     }
 
-    public SeedOriginEnum getOrigin() {
+    public String getOrigin() {
         return origin;
     }
 
-    public void setOrigin(SeedOriginEnum origin) {
+    public void setOrigin(String origin) {
         this.origin = origin;
 
     }
