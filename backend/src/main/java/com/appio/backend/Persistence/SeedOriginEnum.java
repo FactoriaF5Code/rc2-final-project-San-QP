@@ -1,6 +1,6 @@
 package com.appio.backend.Persistence;
 
-public enum SeedsOriginEnum {
+public enum SeedOriginEnum {
     RECOGIDA,
     INTERCAMBIO,
     COMPRA

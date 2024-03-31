@@ -1,5 +1,5 @@
 package com.appio.backend.Controllers;
 
-public class SeedsResponse {
+public class SeedResponse {
     
 }

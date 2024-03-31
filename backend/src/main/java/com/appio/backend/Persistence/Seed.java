@@ -10,18 +10,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "seeds")
-public class Seeds {
+public class Seed {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private SeedsOriginEnum origin;
+    private SeedOriginEnum origin;
     private Date pick_up_date;
     private Integer generation;
     private String description;
 
-    public Seeds(String name, SeedsOriginEnum origin, Date pick_up_date, Integer generation, String description) {
+    public Seed(String name, SeedOriginEnum origin, Date pick_up_date, Integer generation, String description) {
         this.name = name;
         this.origin = origin;
         this.pick_up_date = pick_up_date;
@@ -29,7 +29,7 @@ public class Seeds {
         this.description = description;
     }
 
-    public Seeds() {
+    public Seed() {
         
     }
 
@@ -49,11 +49,11 @@ public class Seeds {
         this.name = name;
     }
 
-    public SeedsOriginEnum getOrigin() {
+    public SeedOriginEnum getOrigin() {
         return origin;
     }
 
-    public void setOrigin(SeedsOriginEnum origin) {
+    public void setOrigin(SeedOriginEnum origin) {
         this.origin = origin;
 
     }

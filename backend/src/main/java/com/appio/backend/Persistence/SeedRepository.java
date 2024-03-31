@@ -1,5 +1,5 @@
 package com.appio.backend.Persistence;
 
-public class SeedsRepository {
+public class SeedRepository {
     
 }
