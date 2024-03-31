@@ -1,3 +1,12 @@
+CREATE TABLE seeds (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    origin VARCHAR(255),
+    pick_up_date DATE,
+    generation INTEGER,
+    description VARCHAR(255)
+);
+
 INSERT INTO seeds (id, name, origin, pick_up_date, generation, description) 
 VALUES 
 (1, 'Tomate', 'Recogida', '2023-05-10', 1, 'Variedad indeterminada de tomate, resistente al tizón tardío. Ideal para sembrar en primavera y verano. Produce grandes tomates rojos sabrosos, perfectos para ensaladas y salsas.'),
