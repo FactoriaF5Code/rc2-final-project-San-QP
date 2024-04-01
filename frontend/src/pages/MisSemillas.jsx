@@ -6,25 +6,37 @@ import { TableSeeds } from "../components/TableSeeds";
 import { ModalNewSeed } from "../components/ModalNewSeed";
 import "../styles/MiHuerto.css";
 import "../styles/MisSemillas.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const MisSemillas = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [dataSeeds, setDataSeeds] = useState([]);
 
   const openModal = () => {
     setIsModalOpen(true);
-  }
+  };
 
   const closeModal = () => {
     setIsModalOpen(false);
-  }
+  };
+
+  useEffect(() => {
+    const getDataFromDatabase = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/seeds");
+        console.log("Datos de la respuesta:", response.data); 
+        setDataSeeds(response.data);
+      } catch (error) {
+        console.log("Error al obtener datos:", error);
+      }
+    };
+    getDataFromDatabase();
+  }, []);  
 
   return (
     <>
-      { isModalOpen && (
-      <ModalNewSeed
-        closeModal = {closeModal}
-      />)}
+      {isModalOpen && <ModalNewSeed closeModal={closeModal} />}
       <header className="mainHeader">
         <BackHomeLink />
       </header>
@@ -51,13 +63,11 @@ export const MisSemillas = () => {
                 </button>
                 <input type="search" placeholder={"Buscar en mis semillas"} />
               </div>
-              <button
-                className="fluorButton"
-                onClick={openModal}>
+              <button className="fluorButton" onClick={openModal}>
                 + AÑADIR ESPECIE
               </button>
             </div>
-            <TableSeeds />
+            <TableSeeds dataSeeds={dataSeeds}/>
           </section>
           <Menu />
         </div>

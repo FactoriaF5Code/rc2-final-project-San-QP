@@ -1,44 +1,40 @@
-import '../styles/MisSemillas.css'
+import "../styles/MisSemillas.css";
+import PropTypes from "prop-types";
 
-export const TableSeeds = () => {
+export const TableSeeds = ({ dataSeeds }) => {
   return (
     <div className="seeds">
-    MIS SEMILLAS
-    <div className="seedsTable">
-      <ul className="seedsRow">
-        <li className="seedsRow_Name">Nombre de especie</li>
-        <li className="seedsRow_Props">Origen: recogida</li>
-        <li className="seedsRow_Props">Fecha de recogida: dd/mm/yyyy</li>
-        <li className="seedsRow_Props">Generación: 5</li>
-        <li className="seedsRow_Options">
-          <a href="">Borrar</a>
-          <a href="">Modificar</a>
-          <a href="">Ver</a>
-        </li>
-      </ul>
-      <ul className="seedsRow">
-        <li className="seedsRow_Name">Nombre de especie</li>
-        <li className="seedsRow_Props">Origen: recogida</li>
-        <li className="seedsRow_Props">Fecha de recogida: dd/mm/yyyy</li>
-        <li className="seedsRow_Props">Generación: 5</li>
-        <li className="seedsRow_Options">
-          <a href="">Borrar</a>
-          <a href="">Modificar</a>
-          <a href="">Ver</a>
-        </li>
-      </ul>
-      <ul className="seedsRow">
-        <li className="seedsRow_Name">Nombre de especie</li>
-        <li className="seedsRow_Props">Origen: recogida</li>
-        <li className="seedsRow_Props">Fecha de recogida: dd/mm/yyyy</li>
-        <li className="seedsRow_Props">Generación: 5</li>
-        <li className="seedsRow_Options">
-          <a href="">Borrar</a>
-          <a href="">Modificar</a>
-          <a href="">Ver</a>
-        </li>
-      </ul>
+      MIS SEMILLAS
+      <div className="seedsTable">
+        {dataSeeds &&
+          dataSeeds.map((seed, index) => (
+            <ul className="seedsRow" key={index}>
+              <li className="seedsRow_Name">{seed.name}</li>
+              <div className="seedsRow_Props">
+                <li className="seedsRow_Props_Item">Origen: {seed.origin}</li>
+                {seed.pick_up_date && (
+                  <li className="seedsRow_Props_Item" id="pickUp">
+                    Fecha de recogida: {seed.formattedPickUpDate}
+                  </li>
+                )}
+                {seed.generation && (
+                  <li className="seedsRow_Props_Item" id="generation">
+                    Generación: {seed.generation}
+                  </li>
+                )}
+              </div>
+              <li className="seedsRow_Options">
+                <a href="">Borrar</a>
+                <a href="">Modificar</a>
+                <a href="">Ver</a>
+              </li>
+            </ul>
+          ))}
+      </div>
     </div>
-  </div>
-  )
-}
+  );
+};
+
+TableSeeds.propTypes = {
+  dataSeeds: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
