@@ -3,7 +3,6 @@ package com.appio.backend.Controllers;
 import java.util.Date;
 
 public class SeedRequest {
-    private Integer id;
     private String name;
     private String origin;
     private Date pick_up_date;
@@ -16,14 +15,6 @@ public class SeedRequest {
         this.pick_up_date = pick_up_date;
         this.generation = generation;
         this.description = description;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {

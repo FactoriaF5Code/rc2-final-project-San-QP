@@ -8,6 +8,8 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.appio.backend.Persistence.Seed;
@@ -36,4 +38,25 @@ public class SeedController {
 
         return seeds;
     }
+
+    @PostMapping("/api/seeds")
+    public SeedResponse createSeed(@RequestBody SeedRequest requestSeed) {
+        Seed seed = new Seed(
+            requestSeed.getName(),
+            requestSeed.getOrigin(),
+            requestSeed.getPick_up_date(),
+            requestSeed.getGeneration(),
+            requestSeed.getDescription());
+
+        Seed savedSeed = repository.save(seed);
+
+        return new SeedResponse(
+            savedSeed.getId(),
+            savedSeed.getName(),
+            savedSeed.getOrigin(),
+            Optional.ofNullable(savedSeed.getPick_up_date()),
+            Optional.ofNullable(savedSeed.getGeneration()),
+            savedSeed.getDescription());
+    }
+
 }
