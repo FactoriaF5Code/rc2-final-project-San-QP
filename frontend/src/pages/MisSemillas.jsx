@@ -69,9 +69,9 @@ export const MisSemillas = () => {
             </div>
             <TableSeeds dataSeeds={dataSeeds}/>
           </section>
-          <Menu />
         </div>
       </main>
+      <Menu />
     </>
   );
 };

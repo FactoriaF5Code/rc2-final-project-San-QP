@@ -1,11 +1,10 @@
 .panel_MiHuerto {
     min-height: 100vh;
-    background-color: var(--color-light);
+    background-color: #e6e5cef3;
     background-image: url('/mihuerto-background2.jpg');
-    background-position:bottom;
+    background-position:top;
     background-blend-mode:soft-light;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 

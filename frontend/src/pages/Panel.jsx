@@ -22,9 +22,9 @@ export const Panel = () => {
             </p>
           </div>
           <ShortCalendar />
-          <Menu />
         </div>
       </main>
+          <Menu />
     </>
   );
 };

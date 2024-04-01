@@ -35,9 +35,9 @@ export const MiHuerto = () => {
               <p>MIS CULTIVOS</p>
             </Link>
           </section>
-          <Menu />
         </div>
       </main>
+          <Menu />
     </>
   );
 };
