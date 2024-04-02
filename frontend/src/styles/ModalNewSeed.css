@@ -4,19 +4,57 @@
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding:none;
     z-index: 2;
 }
 
-.newSeed_Modal {
-    background-color: var(--color-dark-green);
+.newSeed_Modal, .newSeed_Modal_ConfirmationMessage {
     width: 50%;
+    min-height: 45%;
     padding:5rem;
     border-radius: 4rem;
     box-shadow: 0px 4px 5.8px 0px #000000a1;
     margin: none;
+}
+
+.newSeed_Modal{
+    background-color: var(--color-dark-green);
+}
+
+.newSeed_Modal_ConfirmationMessage{
+    background-color: var(--color-fluor-green);
+    text-align: center;
+    color: var(--color-dark-green);
+}
+
+.confirmationMessage_Content{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 24rem;
+    gap: 2rem;
+    height: 100%;
+}
+
+.newSeed_Modal_ConfirmationMessage header {
+    text-align: right;
+}
+
+.newSeed_Modal_ConfirmationMessage h1{
+    font-size: 4.2rem;
+    font-weight: 800;
+}
+
+.newSeed_Modal_ConfirmationMessage h2{
+    font-size: 2.1rem;
+    font-weight: bold;
+}
+
+.newSeed_Modal_ConfirmationMessage p{
+    font-size: 2.1rem;
+    font-weight: 500;
 }
 
 .newSeed_Modal_Header{
@@ -31,8 +69,8 @@
     font-size: 4.2rem;
 }
 
+
 .newSeed_Modal_Content_Form_Inputs {
-    /* outline: 1px solid green; */
     padding: 2rem 0;
 }
 
@@ -44,7 +82,6 @@
 
 .seedName {
     width: 50%;
-    /* outline: 1px solid red; */
 }
 
 /*Estilo de los inputs*/
@@ -109,7 +146,6 @@ color: var(--color-light);
 }
 
 .newSeed_Modal_Content_Form_InputsDetails {
-    /* outline: 1px solid purple; */
     display: flex;
     flex-direction: column;
 }
@@ -124,4 +160,12 @@ color: var(--color-light);
     background: transparent;
     border: none;
     cursor: pointer;
+    fill: #E6E5CE;
+}
+
+.buttonCloseConfirmation{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    fill: var(--color-dark-green)!important;
 }
