@@ -2,42 +2,53 @@ import "../styles/ModalNewSeed.css";
 import { IconClose } from "../assets/svg/IconClose";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import axios from "axios";
+// import axios from "axios";
 
 export const ModalNewSeed = ({ closeModal }) => {
   const [selectedOption, setSelectedOption] = useState("");
-  const [postSeed, setPostSeed] = useState({
-    name: "",
-    origin: "",
-    pickUpDate: "",
-    generation: "",
-    description: "",
-  });
+  const [newSeedName, setNewSeedName] = useState("");
+  const [newSeedDescription, setNewSeedDescription] = useState("");
+  const [newSeedOrigin, setNewSeedOrigin] = useState("");
+  const [newPickUpDate, setNewPickUpDate] = useState("");
+  const [newSeedGeneration, setNewSeedGeneration] = useState("");
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
 
-  const handleInput = (event) => {
-    setPostSeed({ ...postSeed, [event.target.name]: event.target.value });
-  };
+  // const handleInput = (event) => {
+  //   setPostSeed({ ...postSeed, [event.target.name]: event.target.value });
+  // };
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  const postSeed = (e) => {
+    e.preventDefault();
 
-    const data = {
-      name: postSeed.name,
-      origin: postSeed.origin,
-      pickUpDate: postSeed.pickUpDate,
-      generation: postSeed.generation,
-      description: postSeed.description,
+    const url = "http://localhost:8080/api/seeds";
+
+    console.log("Valor de newPickUpDate:", newPickUpDate);
+
+    const options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: newSeedName,
+        origin: newSeedOrigin,
+        pick_up_date: newPickUpDate,
+        generation: newSeedGeneration,
+        description: newSeedDescription,
+      }),
     };
 
-    axios
-      .post("http://localhost:8080/api/seeds", data)
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
-  }
+    fetch(url, options).then((response) => {
+      if (response.ok) {
+        setNewSeedName("");
+        setNewSeedOrigin("");
+        setNewPickUpDate("");
+        setNewSeedGeneration("");
+        setNewSeedDescription("");
+      }
+    });
+  };
 
   return (
     <section className="newSeed">
@@ -49,13 +60,13 @@ export const ModalNewSeed = ({ closeModal }) => {
           </button>
         </header>
         <main className="newSeed_Modal_Content">
-          <form onSubmit={handleSubmit} className="newSeed_Modal_Content_Form">
+          <form onSubmit={postSeed} className="newSeed_Modal_Content_Form">
             <section className="newSeed_Modal_Content_Form_Inputs">
               <input
                 type="text"
                 placeholder="Nombre de la especie"
                 className="seedName"
-                onChange={handleInput}
+                onChange={(e) => setNewSeedName(e.target.value)}
               />
               <fieldset className="newSeed_Modal_Content_Form_InputsProps">
                 <div className="inputProps_From">
@@ -63,11 +74,11 @@ export const ModalNewSeed = ({ closeModal }) => {
 
                   <select
                     className="seedFrom"
-                    onChange={(event) => {
-                      handleOptionChange(event);
-                      handleInput(event);
-                    }}
                     value={selectedOption}
+                    onChange={(e) => {
+                      handleOptionChange(e);
+                      setNewSeedOrigin(e.target.value);
+                    }}
                   >
                     <option value="">-- Selecciona el origen --</option>
                     <option value="Recogida">Recogida</option>
@@ -82,7 +93,10 @@ export const ModalNewSeed = ({ closeModal }) => {
                       <input
                         type="date"
                         className="seedDate"
-                        onChange={handleInput}
+                        onChange={(e) => {
+                          console.log(e.target.value); // Agregar el console.log() aquí
+                          setNewPickUpDate(e.target.value);}}
+                        
                       />
                     </div>
                     <div className="pickUp_Options_Active">
@@ -91,7 +105,7 @@ export const ModalNewSeed = ({ closeModal }) => {
                         type="number"
                         className="seedGeneration"
                         min="0"
-                        onChange={handleInput}
+                        onChange={(e) => setNewSeedGeneration(e.target.value)}
                       />
                     </div>
                   </>
@@ -101,12 +115,12 @@ export const ModalNewSeed = ({ closeModal }) => {
                 <label htmlFor="">Más detalles:</label>
                 <textarea
                   placeholder="Cantidad de semillas, características de la especie, resistencias a hongos y plagas, consejos de siembra..."
-                  onChange={handleInput}
+                  onChange={(e) => setNewSeedDescription(e.target.value)}
                 ></textarea>
               </fieldset>
             </section>
             <div className="newSeed_Modal_Content_Form_Button">
-              <button className="fluorButton" id="saveButton">
+              <button type="submit" className="fluorButton" id="saveButton">
                 GUARDAR
               </button>
             </div>

@@ -1,5 +1,8 @@
 package com.appio.backend.Controllers;
 
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SeedRequest {
@@ -9,13 +12,22 @@ public class SeedRequest {
     private Integer generation;
     private String description;
 
-    public SeedRequest(String name, String origin, Date pick_up_date, Integer generation, String description) {
+    public SeedRequest(String name, String origin, String pick_up_date, Integer generation, String description) {
         this.name = name;
         this.origin = origin;
-        this.pick_up_date = pick_up_date;
+        if (pick_up_date != null && !pick_up_date.isEmpty()) {
+            try {
+                this.pick_up_date = new SimpleDateFormat("yyyy-MM-dd").parse(pick_up_date);
+            } catch (ParseException e) {
+                // Manejar la excepción aquí, por ejemplo, imprimir un mensaje de error
+                System.err.println("Error al analizar la fecha: " + e.getMessage());
+                // Puedes asignar un valor por defecto a la fecha, o lanzar una excepción, dependiendo de tu lógica de negocio
+            }
+        }
         this.generation = generation;
         this.description = description;
     }
+    
 
     public String getName() {
         return name;
@@ -40,6 +52,7 @@ public class SeedRequest {
     public void setPick_up_date(Date pick_up_date) {
         this.pick_up_date = pick_up_date;
     }
+
 
     public Integer getGeneration() {
         return generation;
