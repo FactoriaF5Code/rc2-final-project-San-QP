@@ -2,7 +2,7 @@ import "../styles/ModalNewSeed.css";
 import { IconClose } from "../assets/svg/IconClose";
 import { useState } from "react";
 import PropTypes from "prop-types";
-// import axios from "axios";
+import axios from "axios";
 
 export const ModalNewSeed = ({ closeModal }) => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -16,38 +16,34 @@ export const ModalNewSeed = ({ closeModal }) => {
     setSelectedOption(event.target.value);
   };
 
-  // const handleInput = (event) => {
-  //   setPostSeed({ ...postSeed, [event.target.name]: event.target.value });
-  // };
-
   const postSeed = (e) => {
     e.preventDefault();
 
     const url = "http://localhost:8080/api/seeds";
 
-    console.log("Valor de newPickUpDate:", newPickUpDate);
-
-    const options = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name: newSeedName,
-        origin: newSeedOrigin,
-        pick_up_date: newPickUpDate,
-        generation: newSeedGeneration,
-        description: newSeedDescription,
-      }),
+    const data = {
+      name: newSeedName,
+      origin: newSeedOrigin,
+      pick_up_date: newPickUpDate,
+      generation: newSeedGeneration,
+      description: newSeedDescription,
     };
 
-    fetch(url, options).then((response) => {
-      if (response.ok) {
-        setNewSeedName("");
-        setNewSeedOrigin("");
-        setNewPickUpDate("");
-        setNewSeedGeneration("");
-        setNewSeedDescription("");
-      }
-    });
+    axios
+      .post(url, data)
+      .then((response) => {
+        if (response.status === 200) {
+          setNewSeedName("");
+          setNewSeedOrigin("");
+          setNewPickUpDate("");
+          setNewSeedGeneration("");
+          setNewSeedDescription("");
+          closeModal();
+        }
+      })
+      .catch((error) => {
+        console.error("Error al enviar la solicitud:", error);
+      });
   };
 
   return (
@@ -95,8 +91,8 @@ export const ModalNewSeed = ({ closeModal }) => {
                         className="seedDate"
                         onChange={(e) => {
                           console.log(e.target.value); // Agregar el console.log() aquí
-                          setNewPickUpDate(e.target.value);}}
-                        
+                          setNewPickUpDate(e.target.value);
+                        }}
                       />
                     </div>
                     <div className="pickUp_Options_Active">
