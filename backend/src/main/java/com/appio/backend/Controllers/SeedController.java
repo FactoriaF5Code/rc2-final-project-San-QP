@@ -5,10 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.appio.backend.Persistence.Seed;
 import com.appio.backend.Services.SeedService;
 
 @RestController
@@ -21,6 +24,11 @@ public class SeedController {
     @GetMapping("/api/seeds")
     public List<SeedResponse> showSeeds() {
         return seedService.showSeeds();
+    }
+
+    @GetMapping("api/seeds/{query}")
+    public List<Seed> searchSeeds(@RequestParam("query") @PathVariable String query) {
+        return seedService.searchSeeds(query);
     }
 
     @PostMapping("/api/seeds")

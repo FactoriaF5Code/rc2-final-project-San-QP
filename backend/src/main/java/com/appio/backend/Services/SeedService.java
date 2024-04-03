@@ -39,26 +39,11 @@ public class SeedService {
         return seeds;
     }
 
-    // public List<SeedRepository> searchSeeds(String query) {
-    //     List<Seed> seeds = seedRepository
-    //             .findAllByNameContainingIgnoreCase(query);
-
-    //     List<SeedResponse> seedResponses = new ArrayList<>();
-    //     for (Seed seed : seeds) {
-    //         Optional<Date> pick_up_date = Optional.ofNullable(seed.getPick_up_date());
-    //         Optional<Integer> generation = Optional.ofNullable(seed.getGeneration());
-
-    //         seedResponses.add(new SeedResponse(
-    //             seed.getId(),
-    //             seed.getName(),
-    //             seed.getOrigin(),
-    //             pick_up_date,
-    //             generation,
-    //             seed.getDescription()));
-    //     }
-
-    //     return seedResponses;
-    // }
+    public List<Seed> searchSeeds(String query) {
+        return seedRepository
+                .findAllByNameContainingIgnoreCase(query);
+    }
+    
 
     public SeedResponse createSeed(@RequestBody SeedRequest requestSeed) {
         System.out.println("Datos recibidos del formulario:");
