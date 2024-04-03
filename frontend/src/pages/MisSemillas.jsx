@@ -12,6 +12,8 @@ import axios from "axios";
 export const MisSemillas = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dataSeeds, setDataSeeds] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const [needsReload, setNeedsReload] = useState(false);
 
   const openModal = () => {
@@ -20,6 +22,18 @@ export const MisSemillas = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleSearch = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios.get(`http://localhost:8080/api/seeds/${searchTerm}`);
+      setDataSeeds(response.data);
+    } catch (error) {
+      console.log("Error al realizar la búsqueda:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -64,10 +78,15 @@ export const MisSemillas = () => {
           <section className="seedsMain">
             <div className="seedsOptions">
               <div className="seedsOptions_searchContainer">
-                <button type="submit" id="search">
+                <button type="submit" id="search" onClick={handleSearch}>
                   <IconSearch />
                 </button>
-                <input type="search" placeholder={"Buscar en mis semillas"} />
+                <input
+                  type="search"
+                  placeholder={"Buscar en mis semillas"}
+                  value={searchTerm} 
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  />
               </div>
               <button className="fluorButton" onClick={openModal}>
                 + AÑADIR ESPECIE
