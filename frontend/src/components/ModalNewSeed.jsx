@@ -4,7 +4,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-export const ModalNewSeed = ({ closeModal }) => {
+export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
   const [selectedOption, setSelectedOption] = useState("");
   const [newSeedName, setNewSeedName] = useState("");
   const [newSeedDescription, setNewSeedDescription] = useState("");
@@ -13,6 +13,7 @@ export const ModalNewSeed = ({ closeModal }) => {
   const [newSeedGeneration, setNewSeedGeneration] = useState("");
   const [formNewSeed, setFormNewSeed] = useState(true);
   const [confirmMessage, setConfirmMessage] = useState(false);
+
 
   const hideFormNewSeed = () => {
     setFormNewSeed(false);
@@ -50,6 +51,7 @@ export const ModalNewSeed = ({ closeModal }) => {
           setNewSeedDescription("");
           hideFormNewSeed();
           showConfirmMessage();
+          setNeedsReload(true);
         }
       })
       .catch((error) => {
@@ -160,4 +162,5 @@ export const ModalNewSeed = ({ closeModal }) => {
 
 ModalNewSeed.propTypes = {
   closeModal: PropTypes.func.isRequired,
+  setNeedsReload: PropTypes.func,
 };

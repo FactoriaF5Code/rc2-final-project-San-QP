@@ -12,6 +12,7 @@ import axios from "axios";
 export const MisSemillas = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dataSeeds, setDataSeeds] = useState([]);
+  const [needsReload, setNeedsReload] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -25,18 +26,23 @@ export const MisSemillas = () => {
     const getDataFromDatabase = async () => {
       try {
         const response = await axios.get("http://localhost:8080/api/seeds");
-        console.log("Datos de la respuesta:", response.data); 
+        console.log("Datos de la respuesta:", response.data);
         setDataSeeds(response.data);
+        // setNeedsReload(true);
       } catch (error) {
         console.log("Error al obtener datos:", error);
       }
     };
     getDataFromDatabase();
-  }, []);  
+  }, [needsReload]);
 
   return (
     <>
-      {isModalOpen && <ModalNewSeed closeModal={closeModal} />}
+      {isModalOpen && (
+        <ModalNewSeed
+          closeModal={closeModal}
+          setNeedsReload={setNeedsReload} />
+      )}
       <header className="mainHeader">
         <BackHomeLink />
       </header>
@@ -67,7 +73,7 @@ export const MisSemillas = () => {
                 + AÑADIR ESPECIE
               </button>
             </div>
-            <TableSeeds dataSeeds={dataSeeds}/>
+            <TableSeeds dataSeeds={dataSeeds} />
           </section>
         </div>
       </main>
