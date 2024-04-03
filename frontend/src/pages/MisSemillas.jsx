@@ -8,11 +8,12 @@ import "../styles/MiHuerto.css";
 import "../styles/MisSemillas.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { IconClose } from "../assets/svg/IconClose";
 
 export const MisSemillas = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [dataSeeds, setDataSeeds] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [needsReload, setNeedsReload] = useState(false);
   const [noResults, setNoResults] = useState(false);
@@ -28,7 +29,9 @@ export const MisSemillas = () => {
   const handleSearch = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get(`http://localhost:8080/api/seeds/${searchTerm}`);
+      const response = await axios.get(
+        `http://localhost:8080/api/seeds/${searchTerm}`
+      );
       setDataSeeds(response.data);
       setNoResults(response.data.length === 0);
     } catch (error) {
@@ -38,10 +41,9 @@ export const MisSemillas = () => {
     }
   };
 
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      handleSearch();
-    }
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+    handleSearch();
   };
 
   useEffect(() => {
@@ -61,9 +63,7 @@ export const MisSemillas = () => {
   return (
     <>
       {isModalOpen && (
-        <ModalNewSeed
-          closeModal={closeModal}
-          setNeedsReload={setNeedsReload} />
+        <ModalNewSeed closeModal={closeModal} setNeedsReload={setNeedsReload} />
       )}
       <header className="mainHeader">
         <BackHomeLink />
@@ -85,17 +85,24 @@ export const MisSemillas = () => {
           </section>
           <section className="seedsMain">
             <div className="seedsOptions">
-              <div className="seedsOptions_searchContainer">
-                <button type="submit" id="search" onClick={handleSearch}>
-                  <IconSearch />
-                </button>
-                <input
-                  type="search"
-                  placeholder={"Buscar en mis semillas"}
-                  value={searchTerm} 
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  onKeyDown={handleKeyPress}
+              <div className="seedsSearch">
+                <div className="seedsOptions_searchContainer">
+                  <button type="submit" id="search" onClick={handleSearch}>
+                    <IconSearch />
+                  </button>
+                  <input
+                    type="search"
+                    placeholder={"Buscar en mis semillas"}
+                    value={searchTerm}
+                    onChange={(e) => {
+                      setSearchTerm(e.target.value);
+                      handleChange(e);
+                    }}
                   />
+                </div>
+                <button /*onClick={cleanInput}*/>
+                  {noResults && <IconClose />}
+                </button>
               </div>
               <button className="fluorButton" onClick={openModal}>
                 + AÑADIR ESPECIE
@@ -104,7 +111,8 @@ export const MisSemillas = () => {
             <TableSeeds
               dataSeeds={dataSeeds}
               noResults={noResults}
-              searchTerm={searchTerm}/>
+              searchTerm={searchTerm}
+            />
           </section>
         </div>
       </main>

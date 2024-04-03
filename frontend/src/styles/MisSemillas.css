@@ -15,13 +15,19 @@
     gap:10rem;
 }
 
+.seedsSearch {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
 .seedsOptions_searchContainer{
     border: 1px solid #1E1E1E;
     border-radius: 1rem;
     display: flex;
     justify-content: left;
     align-items: center;
-    padding: 0 1.4rem;
+    padding: 1.4rem;
     gap: 2rem;
     width: 37rem;
 }
@@ -41,6 +47,13 @@
     background: none;
     border: none;
     display: flex;
+}
+
+.seedsSearch button {
+    border: none;
+    background: transparent;
+    fill:var(--color-dark-green);
+    opacity: 60%;
 }
 
 .seedsOptions input{
