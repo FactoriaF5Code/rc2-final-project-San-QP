@@ -1,9 +1,6 @@
 package com.appio.backend.Controllers;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,62 +9,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.appio.backend.Persistence.Seed;
-import com.appio.backend.Persistence.SeedRepository;
+import com.appio.backend.Services.SeedService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
 public class SeedController {
 
-    private SeedRepository repository;
-
-    public SeedController(@Autowired SeedRepository repository) {
-        this.repository = repository;
-    }
+    @Autowired
+    private SeedService seedService;
 
     @GetMapping("/api/seeds")
     public List<SeedResponse> showSeeds() {
-        List<SeedResponse> seeds = new ArrayList<>();
-        List<Seed> seedsInDatabaseSeeds = repository.findAll();
-
-        for (Seed seed : seedsInDatabaseSeeds) {
-            Optional<Date> pick_up_date = Optional.ofNullable(seed.getPick_up_date());
-            Optional<Integer> generation = Optional.ofNullable(seed.getGeneration());
-            seeds.add(new SeedResponse(seed.getId(), seed.getName(), seed.getOrigin(), pick_up_date, generation,
-                    seed.getDescription()));
-        }
-
-        return seeds;
+        return seedService.showSeeds();
     }
 
     @PostMapping("/api/seeds")
     public SeedResponse createSeed(@RequestBody SeedRequest requestSeed) {
-
-        // Imprimir los datos recibidos para verificar si pickUpDate está llegando como
-        // nulo
-        System.out.println("Datos recibidos del formulario:");
-        System.out.println("Name: " + requestSeed.getName());
-        System.out.println("Origin: " + requestSeed.getOrigin());
-        System.out.println("Pick Up Date: " + requestSeed.getPick_up_date());
-        System.out.println("Generation: " + requestSeed.getGeneration());
-        System.out.println("Description: " + requestSeed.getDescription());
-
-        Seed seed = new Seed(
-                requestSeed.getName(),
-                requestSeed.getOrigin(),
-                requestSeed.getPick_up_date(),
-                requestSeed.getGeneration(),
-                requestSeed.getDescription());
-
-        Seed savedSeed = repository.save(seed);
-
-        return new SeedResponse(
-                savedSeed.getId(),
-                savedSeed.getName(),
-                savedSeed.getOrigin(),
-                Optional.ofNullable(savedSeed.getPick_up_date()),
-                Optional.ofNullable(savedSeed.getGeneration()),
-                savedSeed.getDescription());
+        return seedService.createSeed(requestSeed);
     }
 
 }

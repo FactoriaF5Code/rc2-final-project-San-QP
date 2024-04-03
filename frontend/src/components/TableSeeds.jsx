@@ -2,12 +2,14 @@ import "../styles/MisSemillas.css";
 import PropTypes from "prop-types";
 
 export const TableSeeds = ({ dataSeeds }) => {
+  const reversedDataSeeds = [...dataSeeds].reverse();
+
   return (
     <div className="seeds">
       MIS SEMILLAS
       <div className="seedsTable">
-        {dataSeeds &&
-          dataSeeds.map((seed, index) => (
+        {reversedDataSeeds &&
+          reversedDataSeeds.map((seed, index) => (
             <ul className="seedsRow" key={index}>
               <li className="seedsRow_Name">{seed.name}</li>
               <div className="seedsRow_Props">
