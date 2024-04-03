@@ -1,3 +1,9 @@
+.seeds p {
+    text-align: center;
+    margin: 2rem auto;
+    opacity: 60%;
+}
+
 .seedsMain{
     min-width: 120rem;
     min-height: 48rem;

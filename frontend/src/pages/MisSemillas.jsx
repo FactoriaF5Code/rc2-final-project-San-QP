@@ -15,6 +15,7 @@ export const MisSemillas = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [needsReload, setNeedsReload] = useState(false);
+  const [noResults, setNoResults] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -29,10 +30,17 @@ export const MisSemillas = () => {
       setIsLoading(true);
       const response = await axios.get(`http://localhost:8080/api/seeds/${searchTerm}`);
       setDataSeeds(response.data);
+      setNoResults(response.data.length === 0);
     } catch (error) {
       console.log("Error al realizar la búsqueda:", error);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
     }
   };
 
@@ -86,13 +94,17 @@ export const MisSemillas = () => {
                   placeholder={"Buscar en mis semillas"}
                   value={searchTerm} 
                   onChange={(e) => setSearchTerm(e.target.value)}
+                  onKeyDown={handleKeyPress}
                   />
               </div>
               <button className="fluorButton" onClick={openModal}>
                 + AÑADIR ESPECIE
               </button>
             </div>
-            <TableSeeds dataSeeds={dataSeeds} />
+            <TableSeeds
+              dataSeeds={dataSeeds}
+              noResults={noResults}
+              searchTerm={searchTerm}/>
           </section>
         </div>
       </main>
