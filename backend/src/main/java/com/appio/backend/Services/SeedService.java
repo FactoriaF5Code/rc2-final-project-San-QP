@@ -35,6 +35,7 @@ public class SeedService {
                 .findAllByNameContainingIgnoreCase(query);
     }
 
+    @SuppressWarnings("static-access")
     public SeedResponse createSeed(@RequestBody SeedRequest seedRequest) {
         logger.info("Datos recibidos del formulario: %s".format(seedRequest.toString()));
         
