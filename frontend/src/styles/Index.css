@@ -1,0 +1,48 @@
+.mainHeader {
+    padding: 3rem 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.index {
+    min-height: 100vh;
+    background-color: var(--color-dark-green);
+    background-image: url('/index-background.jpg');
+    background-position: center;
+    background-blend-mode: soft-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indexContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5rem;
+}
+
+.indexContent img {
+    width: 50rem;
+    mix-blend-mode:screen;
+}
+
+.indexContent a {
+    color: var(--color-dark-green);
+    background-color: var(--color-fluor-green);
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 2.5rem 4rem;
+    border-radius: 1.6rem;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.indexContent a:hover {
+    background-color: var(--color-red);
+    color: var(--color-light);
+    font-weight: 300;
+}
