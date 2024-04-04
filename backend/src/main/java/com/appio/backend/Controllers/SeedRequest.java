@@ -5,6 +5,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.appio.backend.Persistence.Seed;
+
 public class SeedRequest {
     private String name;
     private String origin;
@@ -69,4 +71,24 @@ public class SeedRequest {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
+    @Override
+    public String toString() {
+        return "SeedRequest [name=" + name + ", origin=" + origin + ", pick_up_date=" + pick_up_date + ", generation="
+                + generation + ", description=" + description + "]";
+    }
+
+
+    public Seed toSeed() {
+        return new Seed(
+            this.getName(),
+            this.getOrigin(),
+            this.getPick_up_date(),
+            this.getGeneration(),
+            this.getDescription());
+    }
+
+
+    
 }
