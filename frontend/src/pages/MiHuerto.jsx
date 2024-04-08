@@ -27,7 +27,7 @@ export const MiHuerto = () => {
           </section>
           <section className="panel_MiHuerto_buttons">
             <Link to="mis-semillas">
-              <img src="/mis-cultivos.jpg" alt="" />
+              <img src="/semillas.jpg" alt="" />
               <p>MIS SEMILLAS</p>
             </Link>
             <Link to="#">

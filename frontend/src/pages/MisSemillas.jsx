@@ -8,7 +8,6 @@ import "../styles/MiHuerto.css";
 import "../styles/MisSemillas.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { IconClose } from "../assets/svg/IconClose";
 
 export const MisSemillas = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -63,7 +62,9 @@ export const MisSemillas = () => {
   return (
     <>
       {isModalOpen && (
-        <ModalNewSeed closeModal={closeModal} setNeedsReload={setNeedsReload} />
+        <ModalNewSeed
+        closeModal={closeModal}
+        setNeedsReload={setNeedsReload} />
       )}
       <header className="mainHeader">
         <BackHomeLink />
@@ -87,9 +88,6 @@ export const MisSemillas = () => {
             <div className="seedsOptions">
               <div className="seedsSearch">
                 <div className="seedsOptions_searchContainer">
-                  <button type="submit" id="search" onClick={handleSearch}>
-                    <IconSearch />
-                  </button>
                   <input
                     type="search"
                     placeholder={"Buscar en mis semillas"}
@@ -99,10 +97,10 @@ export const MisSemillas = () => {
                       handleChange(e);
                     }}
                   />
+                  <button type="submit" id="search" onClick={handleSearch}>
+                    <IconSearch />
+                  </button>
                 </div>
-                <button /*onClick={cleanInput}*/>
-                  {noResults && <IconClose />}
-                </button>
               </div>
               <button className="fluorButton" onClick={openModal}>
                 + AÑADIR ESPECIE

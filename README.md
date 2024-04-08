@@ -4,7 +4,6 @@ Una aplicación para personas apasionadas del huerto. Comparte recursos y conoci
 Conecta con otro/as cultivadores/as para resolver dudas, intercambiar semillas y compartir logros.
 Únete a nuestra comunidad y haz crecer tu huerto con Appio.
 
----
 ## Technologies
 ### Frontend:
 ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)

@@ -10,6 +10,7 @@
     background-image: url('/index-background.jpg');
     background-position: center;
     background-blend-mode: soft-light;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
