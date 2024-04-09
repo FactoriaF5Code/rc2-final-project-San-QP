@@ -20,41 +20,19 @@
     margin: none;
 }
 
+
 .newSeed_Modal{
     background-color: var(--color-dark-green);
 }
 
-.newSeed_Modal_ConfirmationMessage{
-    background-color: var(--color-fluor-green);
-    text-align: center;
-    color: var(--color-dark-green);
-}
-
-.confirmationMessage_Content{
-    display: flex;
-    flex-direction: column;
-    margin: 5rem 24rem;
-    gap: 2rem;
-    height: 100%;
-}
-
-.newSeed_Modal_ConfirmationMessage header {
-    text-align: right;
-}
-
-.newSeed_Modal_ConfirmationMessage h1{
-    font-size: 4.2rem;
-    font-weight: 800;
-}
-
-.newSeed_Modal_ConfirmationMessage h2{
-    font-size: 2.1rem;
-    font-weight: bold;
-}
-
-.newSeed_Modal_ConfirmationMessage p{
-    font-size: 2.1rem;
-    font-weight: 500;
+@media (width<=768px){
+    .newSeed_Modal, .newSeed_Modal_ConfirmationMessage {
+        width: 100%;
+        height: 100vh;
+        box-shadow: none;
+        border-radius: none;
+        padding-top: 4rem;
+    }
 }
 
 .newSeed_Modal_Header{
@@ -69,6 +47,13 @@
     font-size: 4.2rem;
 }
 
+@media(width<=768px){
+    .newSeed_Modal_Header{
+        padding: 0 2rem;
+    }
+}
+
+/*Estilo de los inputs*/
 
 .newSeed_Modal_Content_Form_Inputs {
     padding: 2rem 0;
@@ -81,10 +66,9 @@
 }
 
 .seedName {
-    width: 50%;
+    min-width: 50%;
 }
 
-/*Estilo de los inputs*/
 .newSeed_Modal_Content_Form_Inputs input, .newSeed_Modal_Content_Form_InputsDetails textarea, .seedFrom {
     background-color: transparent;
     border: 1px solid var(--color-light);
@@ -132,7 +116,6 @@ color: var(--color-light);
 }
 
 .newSeed_Modal_Content_Form_InputsProps {
-    /* outline: 1px solid yellow; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -142,12 +125,30 @@ color: var(--color-light);
 .newSeed_Modal_Content_Form_InputsProps label, .newSeed_Modal_Content_Form_InputsDetails label{
     color: var(--color-light);
     font-size: 1.5rem;
-    
 }
 
 .newSeed_Modal_Content_Form_InputsDetails {
     display: flex;
     flex-direction: column;
+}
+
+@media (width<=768px) {
+    .newSeed_Modal_Content_Form_Inputs {
+        padding: 2rem;
+    }
+
+    .newSeed_Modal_Content_Form_InputsDetails textarea {
+        min-height: 14rem;
+    }
+
+    .newSeed_Modal_Content_Form_InputsProps{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .inputProps_From, .pickUp_Options_Active{
+        width: 100%;
+    }
 }
 
 /*Estilo del espacio contenedor del botón*/
@@ -168,4 +169,52 @@ color: var(--color-light);
     border: none;
     cursor: pointer;
     fill: var(--color-dark-green)!important;
+}
+
+/*Estilos Modal CONFIRMATION*/
+.newSeed_Modal_ConfirmationMessage{
+    background-color: var(--color-fluor-green);
+    text-align: center;
+    color: var(--color-dark-green);
+}
+
+.confirmationMessage_Content{
+    display: flex;
+    flex-direction: column;
+    margin: 5rem 24rem;
+    gap: 2rem;
+    height: 100%;
+}
+
+.newSeed_Modal_ConfirmationMessage header {
+    text-align: right;
+}
+
+.newSeed_Modal_ConfirmationMessage h1{
+    font-size: 4.2rem;
+    font-weight: 800;
+}
+
+.newSeed_Modal_ConfirmationMessage h2{
+    font-size: 2.1rem;
+    font-weight: bold;
+}
+
+.newSeed_Modal_ConfirmationMessage p{
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+@media (width<=768px) {
+    .newSeed_Modal_ConfirmationMessage {
+        margin: 5rem 0rem;
+        max-width: 24rem;
+        height: fit-content;
+        padding: 3rem 5rem;
+    }
+    
+    .confirmationMessage_Content{
+        margin: 0;
+        padding:2rem 0;
+    }
 }
