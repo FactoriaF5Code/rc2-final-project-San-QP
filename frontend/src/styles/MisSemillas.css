@@ -169,9 +169,14 @@
     padding: 1rem 2rem;
 }
 
-.seedsRow_Options a{
+.seedsRow_Options{
+    display: flex;
+}
+
+.seedsRow_Options li{
     margin-left: 1.6rem;
     font-size: 1.5rem;
     color:var(--color-dark-green);
     text-decoration: underline;
+    cursor: pointer;
 }

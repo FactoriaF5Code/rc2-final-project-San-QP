@@ -59,6 +59,24 @@ export const MisSemillas = () => {
     getDataFromDatabase();
   }, [needsReload]);
 
+  //MÉTODO DELETE
+  const deleteSeed = async (e, id) => {
+    e.preventDefault();
+  
+    try {
+      const response = await axios.delete(`http://localhost:8080/api/seeds/${id}`);
+      if (response.status === 200) {
+        console.log("Semilla eliminada con éxito.");
+        window.location.reload();
+      } else {
+        console.error("Error al eliminar la semilla. Estado de respuesta:", response.status);
+      }
+    } catch (error) {
+      console.error("Error al eliminar la semilla:", error);
+    }
+  };
+  
+
   return (
     <>
       {isModalOpen && (
@@ -108,6 +126,7 @@ export const MisSemillas = () => {
             dataSeeds={dataSeeds}
             noResults={noResults}
             searchTerm={searchTerm}
+            deleteSeed={deleteSeed}
           />
         </section>
       </main>

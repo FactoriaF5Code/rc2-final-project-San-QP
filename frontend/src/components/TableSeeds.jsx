@@ -1,7 +1,7 @@
 import "../styles/MisSemillas.css";
 import PropTypes from "prop-types";
 
-export const TableSeeds = ({ dataSeeds, noResults, searchTerm }) => {
+export const TableSeeds = ({ dataSeeds, noResults, searchTerm, deleteSeed }) => {
   const reversedDataSeeds = [...dataSeeds].reverse();
 
   return (
@@ -26,11 +26,11 @@ export const TableSeeds = ({ dataSeeds, noResults, searchTerm }) => {
                   </li>
                 )}
               </div>
-              <li className="seedsRow_Options">
-                <a href="">Borrar</a>
-                <a href="">Modificar</a>
-                <a href="">Ver</a>
-              </li>
+              <ul className="seedsRow_Options">
+                <li onClick={(e) => deleteSeed(e, seed.id)}>Borrar</li>
+                <li >Modificar</li>
+                <li>Ver</li>
+              </ul>
             </ul>
           ))}
       </div>}
