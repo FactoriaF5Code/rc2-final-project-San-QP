@@ -1,13 +1,13 @@
-.mainNav{
+/* .mainNav{
     display: flex;
     letter-spacing: 0.2rem;
-}
-
-.mainNav_link, .separator {
     font-size: 1.5rem;
     margin-left: 3rem;
-    text-align: center;
     font-weight: 500;
+} */
+
+/* .mainNav_link, .separator {
+    text-align: center;
 }
 
 .mainNav_link {
@@ -31,4 +31,4 @@
 .mainNav_link:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
-}
+} */

@@ -1,12 +1,18 @@
-.seeds p {
-    text-align: center;
-    margin: 2rem auto;
-    opacity: 60%;
-}
+
 
 .seedsMain{
-    min-width: 120rem;
+    width: 120rem;
     min-height: 48rem;
+}
+
+@media (width <= 768px) {
+    .logoMiHuerto{
+        display: none;
+    }
+
+    .seedsMain {
+        max-width: 100vw;
+    }
 }
 
 .seedsOptions{
@@ -15,6 +21,16 @@
     gap:10rem;
 }
 
+@media (width <= 768px) {
+    .seedsOptions {
+        flex-direction: column;
+        align-items: center;
+        margin: 5rem 2rem 0;
+        gap: 5rem;
+    }
+}
+
+/*Estilo BUSCADOR*/
 .seedsSearch {
     display: flex;
     gap: 2rem;
@@ -31,6 +47,13 @@
     gap: 2rem;
     width: 37rem;
 }
+
+@media (width <= 768px) {
+    .seedsOptions_searchContainer{
+        width: 30rem;
+        margin: 0 2rem;
+    }
+} 
 
 .seedsOptions_searchContainer input{
     border: none;
@@ -62,12 +85,20 @@
     border: none;
 }
 
+
+/* Estilos de TABLA */
 .seeds{
     text-align: center;
     font-size: 2.1rem;
     color:var(--color-dark-green);
     font-weight: 500;
     margin: 6rem 0;
+}
+
+.seeds p {
+    text-align: center;
+    margin: 2rem auto;
+    opacity: 60%;
 }
 
 .seedsTable{

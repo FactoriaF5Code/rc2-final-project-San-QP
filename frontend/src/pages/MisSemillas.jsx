@@ -62,57 +62,54 @@ export const MisSemillas = () => {
   return (
     <>
       {isModalOpen && (
-        <ModalNewSeed
-        closeModal={closeModal}
-        setNeedsReload={setNeedsReload} />
+        <ModalNewSeed closeModal={closeModal} setNeedsReload={setNeedsReload} />
       )}
-      <header className="mainHeader">
+      <header className="backLink">
         <BackHomeLink />
       </header>
       <main className="panel_MiHuerto">
-        <div className="panelContent">
-          <section className="panelContent_title">
-            <Link to="/mi-huerto">
-              <img
-                src="/MiHuertoLogo.svg"
-                alt="Logo Appio"
-                style={{ minWidth: "30rem" }}
-              />
-            </Link>
-            <p>
-              Mantén tu huerto organizado guardando un registro de tu biblioteca
-              de semillas y tus cultivos.
-            </p>
-          </section>
-          <section className="seedsMain">
-            <div className="seedsOptions">
-              <div className="seedsSearch">
-                <div className="seedsOptions_searchContainer">
-                  <input
-                    type="search"
-                    placeholder={"Buscar en mis semillas"}
-                    value={searchTerm}
-                    onChange={(e) => {
-                      setSearchTerm(e.target.value);
-                      handleChange(e);
-                    }}
-                  />
-                  <button type="submit" id="search" onClick={handleSearch}>
-                    <IconSearch />
-                  </button>
-                </div>
-              </div>
-              <button className="fluorButton" onClick={openModal}>
-                + AÑADIR ESPECIE
-              </button>
-            </div>
-            <TableSeeds
-              dataSeeds={dataSeeds}
-              noResults={noResults}
-              searchTerm={searchTerm}
+      <section className="panelContent_title_MiHuerto">
+          <Link to="/mi-huerto">
+            <img
+              className="logoMiHuerto"
+              src="/MiHuertoLogo.svg"
+              alt="Logo Appio"
+              style={{ minWidth: "30rem" }}
             />
-          </section>
-        </div>
+          </Link>
+          <p>
+            Mantén tu huerto organizado guardando un registro de tu biblioteca
+            de semillas y tus cultivos.
+          </p>
+        </section>
+        <section className="seedsMain">
+          <div className="seedsOptions">
+            <div className="seedsSearch">
+              <div className="seedsOptions_searchContainer">
+                <input
+                  type="search"
+                  placeholder={"Buscar en mis semillas"}
+                  value={searchTerm}
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                    handleChange(e);
+                  }}
+                />
+                <button type="submit" id="search" onClick={handleSearch}>
+                  <IconSearch />
+                </button>
+              </div>
+            </div>
+            <button className="fluorButton" onClick={openModal}>
+              + AÑADIR ESPECIE
+            </button>
+          </div>
+          <TableSeeds
+            dataSeeds={dataSeeds}
+            noResults={noResults}
+            searchTerm={searchTerm}
+          />
+        </section>
       </main>
       <Menu />
     </>

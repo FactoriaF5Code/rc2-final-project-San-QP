@@ -1,15 +1,9 @@
-/* .mainHeader {
-    padding: 3rem 0;
-    position: absolute;
-    z-index: 1;
-} */
-
 .panel {
     background-color: var(--color-light);
     background-image: url('/index-background.jpg');
     background-repeat: no-repeat;
     background-position: bottom;
-    background-blend-mode: soft-light;
+    background-blend-mode:overlay;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -22,7 +16,7 @@
     align-items: center;
     justify-content: flex-start;
     max-width: 120rem;
-    gap: 8rem;
+    gap: 6rem;
 }
 
 /*Estilos de cabecera: logo y párrafo de introducción*/
@@ -38,25 +32,30 @@
     max-width: 20rem;
 }
 
-.panelContent p {
+.panelContent_title p {
     font-size: 1.8rem;
     max-width: 50rem;
     text-align: center;
 }
 
 @media (width <=768px) {
+    .panelContent {
+        gap: 2rem!important;
+    }
+   
     .panelContent_title {
         align-items: flex-start;
         margin: 0 2rem;
     }
 
     .panelContent_title img {
-        margin: 3.2rem 0;
+        margin: 3.2rem 0 1.5rem 0;
         max-width: 13.6rem;
     }
 
     .panelContent_title p {
         text-align: left;
+        font-size: 1.6rem;
     }
 }
 
@@ -157,21 +156,24 @@
 @media (width <=768px) {
     .panelContent_Calendar {
         flex-direction: column;
-        margin: 0 2rem;
-        padding: 4rem 3rem;
+        margin: 0;
+        padding: 3rem 3rem;
         gap: 2rem;
     }
 
     .panelContent_Calendar_Moon {
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         text-align: center;
-        line-height: 4rem;
+        line-height: 3.2rem;
         gap: 2rem;
     }
 
     .panelContent_Calendar_Moon img {
         max-width: 7rem;
+        margin: 0;
     }
 
     .moonPhase {
@@ -181,6 +183,14 @@
     .date {
         display: flex;
         flex-direction: column;
+    }
+
+    .date h3 {
+        font-size: 2.8rem;
+    }
+
+    .date p {
+        font-size: 1.6rem;
     }
 
     .date hr {
@@ -197,56 +207,22 @@
 
     .panelContent_Calendar_Tasks {
         width: 100%;
+        justify-content:flex-start;
+        margin:0;
+        padding:0;
     }
 
     .panelContent_Calendar_Tasks div {
         display: none;
     }
 
+    .panelContent_Calendar_Tasks ul {
+        padding: 0;
+    }
+
     .panelContent_Calendar_Tasks a {
         text-align: center;
-        margin-top: 2rem;
+        margin-top: 1.2rem;
     }
 }
 
-/*Estilos del MENU*/
-.panelContent_appioMenu {
-    position: absolute;
-    bottom: 0;
-    background: linear-gradient(0deg, rgba(230, 229, 206, 1) 48%, rgba(230, 229, 206, 0) 100%);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 5rem 0;
-    gap: 3.8rem;
-    /* -webkit-box-shadow: 0px -14px 35px 0px rgba(18, 41, 37, 0.38);
-    -moz-box-shadow: 0px -14px 35px 0px rgba(18, 41, 37, 0.38);
-    box-shadow: 0px -14px 35px 0px rgba(18, 41, 37, 0.38); */
-}
-
-.panelContent_appioMenu_button {
-    background-color: var(--color-dark-green);
-    border-radius: 2.3rem;
-    width: 11.7rem;
-    aspect-ratio: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    -webkit-box-shadow: 0px -3px 18px 0px rgba(18, 41, 37, 0.38);
-    -moz-box-shadow: 0px -3px 18px 0px rgba(18, 41, 37, 0.38);
-    box-shadow: 0px -3px 18px 0px rgba(18, 41, 37, 0.38);
-}
-
-.panelContent_appioMenu_button a {
-    color: var(--color-fluor-green);
-    font-size: 1.6rem;
-    text-align: center;
-}
-
-@media (width<= 780px) {
-    .panelContent_appioMenu {
-        width: 100%;
-        padding: 3.5rem 0;
-        gap: 0.8rem;
-    }
-}

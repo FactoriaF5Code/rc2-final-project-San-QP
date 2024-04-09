@@ -1,19 +1,98 @@
+.backLink {
+    display: flex;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    margin-left: 3rem;
+    font-weight: 500;
+    position: absolute;
+    z-index: 1;
+    margin-top: 3rem;
+}
+
+.backLink a{
+    color: var(--color-dark-green);
+    text-decoration: underline;
+}
+
+@media (width <= 768px) {
+    .backLink {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    .backLink a {
+        margin-top:2rem;
+    }
+}
+
+/*Estilos de cabecera: logo y párrafo de introducción*/
+.panelContent_title_MiHuerto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.panelContent_title_MiHuerto img {
+    margin: 3rem;
+    max-width: 30rem;
+}
+
+.panelContent_title_MiHuerto p {
+    font-size: 1.8rem;
+    max-width: 50rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+@media (width <=768px) {
+    .panelContent_title_MiHuerto {
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .panelContent_title_MiHuerto img {
+        max-width: 34rem;
+        margin-bottom: 2rem;
+    }
+
+    .panelContent_title_MiHuerto p {
+        display: none;
+        margin: 0 5rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+}
+
 .panel_MiHuerto {
     min-height: 100vh;
-    background-color: #e6e5cef3;
+    background-color: var(--color-light);
     background-image: url('/mihuerto-background2.jpg');
     background-position:top;
-    background-blend-mode:soft-light;
+    background-blend-mode:overlay;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6rem;
+}
+
+.panel_MiHuerto_buttons {
+    width: 100vw;
     display: flex;
     justify-content: center;
 }
 
-.panel_MiHuerto_buttons {
+.fondo_semillas {
     background-image: url('/semillas.svg') ;
     background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
+    background-position: top;
     gap: 12.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100rem;
+    padding: 6rem 0;
 }
 
 .panel_MiHuerto_buttons a {
@@ -43,6 +122,34 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+@media (width <= 768px) {
+    .panel_MiHuerto{
+        gap:0;
+    }
+
+    .panel_MiHuerto_buttons img {
+        display:none;
+    }
+
+    .fondo_semillas {
+        background-size: 80%;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap:2rem;
+        padding-top: 9rem;
+    }
+
+
+    .panel_MiHuerto_buttons p{
+        border-radius: 1.6rem;
+        width: 30rem;
+        font-weight: 600;
+    }
+    
+}
+
 .fluorButton{
     background-color: var(--color-fluor-green);
     border: none;
@@ -54,4 +161,11 @@
     padding: 0 4rem;
     border-radius: 1rem;
     cursor: pointer;
+}
+
+@media (width <= 768px) {
+    .fluorButton{
+        max-width: 29rem;
+        font-size: 1.8rem;
+    }
 }
