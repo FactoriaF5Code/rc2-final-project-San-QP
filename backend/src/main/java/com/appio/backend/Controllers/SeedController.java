@@ -1,7 +1,6 @@
 package com.appio.backend.Controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -42,24 +41,10 @@ public class SeedController {
         return seedService.createSeed(requestSeed);
     }
 
-
-    //MÉTODO DELETE: sacar a capa servicios
-    public class SeedNotFoundException extends RuntimeException {
-        public SeedNotFoundException(String message) {
-            super(message);
-        }
-    }
-    
     @DeleteMapping("/api/seeds/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCard(@PathVariable int id) {
-        Optional<Seed> seed = repository.findById(id);
-
-        if (seed.isEmpty()) {
-            throw new SeedNotFoundException("Seed not found -id:" + id);
-        }
-
-        repository.deleteById(id);
+        seedService.deleteSeed(id); // Call the service method
     }
 
     private SeedRepository repository;

@@ -1,7 +1,7 @@
 package com.appio.backend.Services;
 
 import java.util.List;
-
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -46,4 +46,19 @@ public class SeedService {
 
         return SeedResponse.from(savedSeed);
     }
+
+    public class SeedNotFoundException extends RuntimeException {
+        public SeedNotFoundException(String message) {
+            super(message);
+        }
+    }
+    
+    public void deleteSeed(int id) {
+        Optional<Seed> seed = seedRepository.findById(id);
+        if (seed.isEmpty()) {
+            throw new SeedNotFoundException("Seed not found - id:" + id); // Throw the exception here
+        }
+        seedRepository.deleteById(id);
+    }
+
 }
