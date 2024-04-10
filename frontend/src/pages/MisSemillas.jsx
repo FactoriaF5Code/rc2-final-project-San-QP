@@ -25,6 +25,7 @@ export const MisSemillas = () => {
     setIsModalOpen(false);
   };
 
+  // Manejar la BÚSQUEDA
   const handleSearch = async () => {
     try {
       setIsLoading(true);
@@ -45,6 +46,7 @@ export const MisSemillas = () => {
     handleSearch();
   };
 
+  //Método GET para la tabla de semillas
   useEffect(() => {
     const getDataFromDatabase = async () => {
       try {
@@ -59,7 +61,7 @@ export const MisSemillas = () => {
     getDataFromDatabase();
   }, [needsReload]);
 
-  //MÉTODO DELETE
+  //Método DELETE para la tabla de semillas
   const deleteSeed = async (e, id) => {
     e.preventDefault();
   
