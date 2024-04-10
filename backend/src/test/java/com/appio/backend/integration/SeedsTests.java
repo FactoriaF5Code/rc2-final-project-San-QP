@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
@@ -102,5 +103,14 @@ class SeedsTests {
                         // jsonPath("$.pick_up_date", equalTo(null)),
                         // jsonPath("$.generation", equalTo(null)),
                         jsonPath("$.description", equalTo("Lechuga iceberg, crujiente. De crecimiento rápido")));
+    }
+
+    @Test
+    public void delete_existing_seed_by_id() throws Exception{
+        Seed savedSeed = seedRepository.save(new Seed("Espinaca", "Intercambio", null, null, "Espiga tarde, aguanta mucho tiempo sin florecer"));
+        
+        api.perform(delete("/api/seeds/" + savedSeed.getId()))
+            .andExpect(status().isNoContent());
+
     }
 }

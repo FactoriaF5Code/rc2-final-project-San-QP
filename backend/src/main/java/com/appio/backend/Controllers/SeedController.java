@@ -44,14 +44,14 @@ public class SeedController {
 
 
     //MÉTODO DELETE: sacar a capa servicios
-
     public class SeedNotFoundException extends RuntimeException {
         public SeedNotFoundException(String message) {
             super(message);
         }
     }
-
+    
     @DeleteMapping("/api/seeds/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCard(@PathVariable int id) {
         Optional<Seed> seed = repository.findById(id);
 
