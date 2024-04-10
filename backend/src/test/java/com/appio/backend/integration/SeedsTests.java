@@ -20,7 +20,6 @@ import com.appio.backend.Persistence.SeedRepository;
 
 import java.util.List;
 
-
 @SpringBootTest
 @AutoConfigureMockMvc
 class SeedsTests {
@@ -39,27 +38,30 @@ class SeedsTests {
 
     @Test
     public void returns_existing_seeds() throws Exception {
-        seedRepository.saveAll(List.of(
-            new Seed("Zanahoria", "Compra", null, null, "Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado."),
-            new Seed("Berza", "Intercambio", null, null, "Esta berza, también llamada col gallega o col forrajera. Sus hojas grandes y lisas no forman pella, siendo fácil de deshojar.")
-            ));
 
-            api.perform(get("/api/seeds"))
+        seedRepository.saveAll(List.of(
+                new Seed("Zanahoria", "Compra", null, null,
+                        "Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado."),
+                new Seed("Berza", "Intercambio", null, null,
+                        "Esta berza, también llamada col gallega o col forrajera. Sus hojas grandes y lisas no forman pella, siendo fácil de deshojar.")));
+
+        api.perform(get("/api/seeds"))
                 .andExpectAll(
-                    status().isOk(),
-                    jsonPath("$", hasSize(2)),
-                    jsonPath("$[0].name", equalTo("Zanahoria")),
-                    jsonPath("$[0].origin", equalTo("Compra")),
-                    jsonPath("$[0].pick_up_date",equalTo(null)),
-                    jsonPath("$[0].generation", equalTo(null)),
-                    jsonPath("$[0].description", equalTo("Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado.")),
-                
-                    jsonPath("$[1].name", equalTo("Berza")),
-                    jsonPath("$[1].origin", equalTo("Intercambio")),
-                    jsonPath("$[1].pick_up_date",equalTo(null)),
-                    jsonPath("$[1].generation", equalTo(null)),
-                    jsonPath("$[1].description", equalTo("Esta berza, también llamada col gallega o col forrajera. Sus hojas grandes y lisas no forman pella, siendo fácil de deshojar."))
-                );
+                        status().isOk(),
+                        jsonPath("$", hasSize(2)),
+                        jsonPath("$[0].name", equalTo("Zanahoria")),
+                        jsonPath("$[0].origin", equalTo("Compra")),
+                        jsonPath("$[0].pick_up_date", equalTo(null)),
+                        jsonPath("$[0].generation", equalTo(null)),
+                        jsonPath("$[0].description", equalTo(
+                                "Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado.")),
+
+                        jsonPath("$[1].name", equalTo("Berza")),
+                        jsonPath("$[1].origin", equalTo("Intercambio")),
+                        jsonPath("$[1].pick_up_date", equalTo(null)),
+                        jsonPath("$[1].generation", equalTo(null)),
+                        jsonPath("$[1].description", equalTo(
+                                "Esta berza, también llamada col gallega o col forrajera. Sus hojas grandes y lisas no forman pella, siendo fácil de deshojar.")));
     }
 
     @Test
@@ -67,36 +69,38 @@ class SeedsTests {
         String query = "Zanahoria";
 
         seedRepository.saveAll(List.of(
-            new Seed("Zanahoria", "Compra", null, null, "Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado.")
-            // new Seed("Berza", "Intercambio", null, null, "Esta berza, también llamada col gallega o col forrajera. Sus hojas grandes y lisas no forman pella, siendo fácil de deshojar.")
+                new Seed("Zanahoria", "Compra", null, null,
+                        "Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado.")
+        // new Seed("Berza", "Intercambio", null, null, "Esta berza, también llamada col
+        // gallega o col forrajera. Sus hojas grandes y lisas no forman pella, siendo
+        // fácil de deshojar.")
         ));
 
         api.perform(get("/api/seeds/{query}", query))
-        .andExpectAll(
-            status().isOk(),
-            jsonPath("$", hasSize(1)),
-            jsonPath("$[0].name", equalTo("Zanahoria")),
-            jsonPath("$[0].origin", equalTo("Compra")),
-            jsonPath("$[0].pick_up_date",equalTo(null)),
-            jsonPath("$[0].generation", equalTo(null)),
-            jsonPath("$[0].description", equalTo("Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado."))
-        );
+                .andExpectAll(
+                        status().isOk(),
+                        jsonPath("$", hasSize(1)),
+                        jsonPath("$[0].name", equalTo("Zanahoria")),
+                        jsonPath("$[0].origin", equalTo("Compra")),
+                        jsonPath("$[0].pick_up_date", equalTo(null)),
+                        jsonPath("$[0].generation", equalTo(null)),
+                        jsonPath("$[0].description", equalTo(
+                                "Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado.")));
     }
 
     @Test
     public void creates_new_seed() throws Exception {
-        String requestBody = "{\"name\":\"Lechuga\",\"origin\":\"Compra\",\"pick_up_date\":null,\"generation\":null,\"description\":\"Lechuga iceberg, crujiente. De crecimiento rápido\"}";
+        String requestBody = "{\"name\":\"Lechuga\",\"origin\":\"Compra\",\"description\":\"Lechuga iceberg, crujiente. De crecimiento rápido\"}";
 
         api.perform(post("/api/seeds")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(requestBody))
-            .andExpectAll(
-                status().isCreated(),
-                jsonPath("$.name", equalTo("Lechuga")),
-                jsonPath("$.origin", equalTo("Compra")),
-                jsonPath("$.pick_up_date", equalTo(null)),
-                jsonPath("$.generation", equalTo(null)),
-                jsonPath("$.description", equalTo("Lechuga iceberg, crujiente. De crecimiento rápido")));
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(requestBody))
+                .andExpectAll(
+                        status().isCreated(),
+                        jsonPath("$.name", equalTo("Lechuga")),
+                        jsonPath("$.origin", equalTo("Compra")),
+                        // jsonPath("$.pick_up_date", equalTo(null)),
+                        // jsonPath("$.generation", equalTo(null)),
+                        jsonPath("$.description", equalTo("Lechuga iceberg, crujiente. De crecimiento rápido")));
     }
-
 }

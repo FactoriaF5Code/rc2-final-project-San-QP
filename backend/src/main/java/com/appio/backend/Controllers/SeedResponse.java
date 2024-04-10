@@ -28,6 +28,9 @@ public class SeedResponse {
         this.description = description;
     }
 
+    public SeedResponse() {
+    }
+
     private String formatPickUpDate(Optional<Date> date) {
         if (date.isPresent()) {
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
