@@ -7,6 +7,12 @@ import java.util.Date;
 
 import com.appio.backend.Persistence.Seed;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class SeedRequest {
     private String name;
     private String origin;
@@ -23,52 +29,9 @@ public class SeedRequest {
             } catch (ParseException e) {
                 // Manejar la excepción aquí, por ejemplo, imprimir un mensaje de error
                 System.err.println("Error al analizar la fecha: " + e.getMessage());
-                // Puedes asignar un valor por defecto a la fecha, o lanzar una excepción, dependiendo de tu lógica de negocio
             }
         }
         this.generation = generation;
-        this.description = description;
-    }
-    
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
-    }
-
-    public Date getPick_up_date() {
-        return pick_up_date;
-    }
-
-    public void setPick_up_date(Date pick_up_date) {
-        this.pick_up_date = pick_up_date;
-    }
-
-
-    public Integer getGeneration() {
-        return generation;
-    }
-
-    public void setGeneration(Integer generation) {
-        this.generation = generation;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
         this.description = description;
     }
 

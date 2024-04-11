@@ -44,7 +44,7 @@ public class SeedController {
     @DeleteMapping("/api/seeds/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCard(@PathVariable int id) {
-        seedService.deleteSeed(id); // Call the service method
+        seedService.deleteSeed(id);
     }
 
     private SeedRepository repository;
