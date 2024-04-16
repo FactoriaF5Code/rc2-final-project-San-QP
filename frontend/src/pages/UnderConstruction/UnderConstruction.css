@@ -1,0 +1,50 @@
+.inProgress{
+    background-color: var(--color-red);
+    background-image: url('/manos-sucias.jpg');
+    background-position: center;
+    background-blend-mode: soft-light;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inProgress img {
+    max-width: 20rem;
+    margin:3rem;
+    cursor: pointer;
+}
+
+.inProgressContent {
+    color: var(--color-light);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100vw;
+    height: 70vh;
+}
+
+.inProgressIcon{
+    fill: var(--color-light);
+    width: 14rem;
+}
+
+.inProgressContent h1 {
+    font-size: 2.1rem;
+}
+
+.inProgressContent p {
+    font-size: 4.2rem;
+    line-height: 4.8rem;
+    font-weight: 700;
+}
+
+.inProgressContent a {
+    color: var(--color-light);
+    text-decoration: underline;
+    font-size: 2.1rem;
+}

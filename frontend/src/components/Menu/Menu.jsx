@@ -16,7 +16,7 @@ export const Menu = () => {
         </Link>
       </div>
       <div className="panelContent_appioMenu_button">
-        <Link to="#">
+        <Link to="/wait-for-it">
           <div className="iconsMenu">
             <IconCommunity />
           </div>
@@ -24,7 +24,7 @@ export const Menu = () => {
         </Link>
       </div>
       <div className="panelContent_appioMenu_button">
-        <Link to="#">
+        <Link to="/wait-for-it">
           <div className="iconsMenu">
             <IconBook />
           </div>

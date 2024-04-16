@@ -5,7 +5,7 @@ const SeedsContext = createContext();
 
 export const SeedsProvider = ({ children }) => {
   const [seeds, setSeeds] = useState([]);
-  const [searchSeedsResult, setSearchSeedsResult] = useState([]);
+  // const [searchSeedsResult, setSearchSeedsResult] = useState([]);
 
   const seedsService = new SeedsService();
 
@@ -18,16 +18,6 @@ export const SeedsProvider = ({ children }) => {
       console.error("Error al obtener los datos", error);
     }
   };
-
-  const searchSeeds = async (term) => {
-    try {
-        const searchedSeeds = await seedsService.searchSeeds(term);
-        setSearchSeedsResult(searchedSeeds);
-      } catch (error) {
-        console.error("Error al realizar la búsqueda:", error);
-        setSearchSeedsResult([]);
-      }
-  }
 
   const deleteSeed = async (id) => {
     try {
@@ -55,8 +45,8 @@ export const SeedsProvider = ({ children }) => {
     setSeeds,
     deleteSeed,
     createSeed,
-    searchSeeds,
-    searchSeedsResult,
+    // searchSeeds,
+    // searchSeedsResult,
   };
 
   return (

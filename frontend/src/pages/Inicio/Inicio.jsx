@@ -1,7 +1,7 @@
-import "./Index.css";
+import "./Inicio.css";
 import { Link } from "react-router-dom";
 
-export const Index = () => {
+export const Inicio = () => {
   return (
     <>
       <main className="index">

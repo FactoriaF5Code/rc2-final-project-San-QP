@@ -43,7 +43,7 @@ export const TableSeeds = () => {
               </div>
               <ul className="seedsRow_Options">
                 <li onClick={(e) => deleteSeedHandler(e, seed.id)}>Borrar</li>
-                <li>Modificar</li>
+
                 <li>Ver</li>
               </ul>
             </ul>

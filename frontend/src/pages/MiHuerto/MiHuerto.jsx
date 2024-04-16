@@ -30,7 +30,7 @@ export const MiHuerto = () => {
               <img src="/semillas.jpg" alt="" />
               <p>MIS SEMILLAS</p>
             </Link>
-            <Link to="#">
+            <Link to="/wait-for-it">
               <img src="/mis-cultivos.jpg" alt="" />
               <p>MIS CULTIVOS</p>
             </Link>

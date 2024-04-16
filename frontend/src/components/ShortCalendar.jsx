@@ -25,7 +25,7 @@ export const ShortCalendar = () => {
           <li>Regar plantas en flor.</li>
           <li>Hacer injertos.</li>
         </ul>
-        <a href="#">VER CALENDARIO</a>
+        <a href="/wait-for-it">VER CALENDARIO</a>
       </div>
     </section>
   );
