@@ -1,4 +1,4 @@
-import "../styles/MainNav.css";
+import "./MainNav.css";
 import { BurgerMainNav } from "./BurgerMainNav";
 import { useState } from "react";
 

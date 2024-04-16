@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Menu } from "../components/Menu";
-import { BackHomeLink } from "../components/BackHomeLink";
-import "../styles/MiHuerto.css";
+import { Menu } from "../../components/Menu/Menu";
+import { BackHomeLink } from "../../components/BackHomeLink";
+import "./MiHuerto.css";
 
 export const MiHuerto = () => {
   return (

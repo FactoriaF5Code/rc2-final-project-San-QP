@@ -1,9 +1,8 @@
-import "../styles/ModalNewSeed.css";
-import { IconClose } from "../assets/svg/IconClose";
+import "./ModalNewSeed.css";
+import { IconClose } from "../../assets/svg/IconClose";
 import { useState, useContext } from "react";
 import PropTypes from "prop-types";
-// import { SeedsService } from "../services/SeedsService";
-import { SeedsContext } from "../middleware/context/SeedsContext";
+import { SeedsContext } from "../../middleware/context/SeedsContext";
 
 export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
   const [selectedOption, setSelectedOption] = useState("");

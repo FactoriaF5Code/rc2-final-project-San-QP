@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { Menu } from "../components/Menu";
-import { BackHomeLink } from "../components/BackHomeLink";
-import { IconSearch } from "../assets/svg/IconSearch";
-import { TableSeeds } from "../components/TableSeeds";
-import { ModalNewSeed } from "../components/ModalNewSeed";
-import { SeedsContext } from "../middleware/context/SeedsContext";
-import "../styles/MiHuerto.css";
-import "../styles/MisSemillas.css";
+import { Menu } from "../../components/Menu/Menu";
+import { BackHomeLink } from "../../components/BackHomeLink";
+import { IconSearch } from "../../assets/svg/IconSearch";
+import { TableSeeds } from "../../components/TableSeeds";
+import { ModalNewSeed } from "../../components/ModalNewSeed/ModalNewSeed";
+import { SeedsContext } from "../../middleware/context/SeedsContext";
+import "../MiHuerto/MiHuerto.css";
+import "./MisSemillas.css";
 import { useState, useEffect, useContext } from "react";
 
 export const MisSemillas = () => {

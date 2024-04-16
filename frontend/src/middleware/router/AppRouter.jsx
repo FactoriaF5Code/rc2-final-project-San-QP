@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Index } from "../../pages/Index";
-import { Login } from "../../pages/Login";
-import { Panel } from "../../pages/Panel";
-import { MiHuerto } from "../../pages/MiHuerto";
-import { MisSemillas } from "../../pages/MisSemillas";
+import { Index } from "../../pages/Index/Index";
+import { Login } from "../../pages/Login/Login";
+import { Panel } from "../../pages/Panel/Panel";
+import { MiHuerto } from "../../pages/MiHuerto/MiHuerto";
+import { MisSemillas } from "../../pages/MisSemillas/MisSemillas";
 import { SeedsProvider } from "../context/SeedsContext";
 
 export const AppRouter = () => {

@@ -1,17 +1,11 @@
 // import { MainNav } from "../components/MainNav";
-import { Menu } from "../components/Menu";
-import { ShortCalendar } from "../components/ShortCalendar";
-import "../styles/Panel.css";
+import { Menu } from "../../components/Menu/Menu";
+import { ShortCalendar } from "../../components/ShortCalendar";
+import "./Panel.css";
 
 export const Panel = () => {
   return (
     <>
-      {/* <header className="mainHeader">
-        <MainNav
-          textColor="var(--color-dark-green)"
-          backgroundColor="var(--color-light)"
-        />
-      </header> */}
       <Menu />
       <main className="panel">
         <div className="panelContent">

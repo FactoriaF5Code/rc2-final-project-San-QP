@@ -1,8 +1,9 @@
-import "../styles/Menu.css";
+import "./Menu.css";
 import { Link } from "react-router-dom";
-import { IconLettuce } from "../assets/svg/IconLettuce";
-import { IconCommunity } from "../assets/svg/IconCommunity";
-import { IconBook } from "../assets/svg/IconBook";
+import { IconLettuce } from "../../assets/svg/IconLettuce";
+import { IconCommunity } from "../../assets/svg/IconCommunity";
+import { IconBook } from "../../assets/svg/IconBook";
+
 export const Menu = () => {
   return (
     <menu className="panelContent_appioMenu">

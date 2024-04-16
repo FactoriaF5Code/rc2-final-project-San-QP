@@ -1,4 +1,4 @@
-import "../styles/MisSemillas.css";
+import "../pages/MisSemillas/MisSemillas.css";
 import { useContext } from "react";
 import { SeedsContext } from "../middleware/context/SeedsContext";
 
