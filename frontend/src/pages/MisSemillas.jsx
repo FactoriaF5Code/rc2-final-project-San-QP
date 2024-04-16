@@ -25,11 +25,9 @@ export const MisSemillas = () => {
     setIsModalOpen(false);
   };
 
-
   useEffect(() => {
     showSeeds();
-}, [needsReload]);
-
+  }, [needsReload]);
 
   return (
     <>
@@ -40,7 +38,7 @@ export const MisSemillas = () => {
         <BackHomeLink />
       </header>
       <main className="panel_MiHuerto">
-      <section className="panelContent_title_MiHuerto">
+        <section className="panelContent_title_MiHuerto">
           <Link to="/mi-huerto">
             <img
               className="logoMiHuerto"
@@ -58,11 +56,7 @@ export const MisSemillas = () => {
           <div className="seedsOptions">
             <div className="seedsSearch">
               <div className="seedsOptions_searchContainer">
-                <input
-                  type="search"
-                  placeholder={"Buscar en mis semillas"}
-                  
-                />
+                <input type="search" placeholder={"Buscar en mis semillas"} />
                 <button type="submit" id="search">
                   <IconSearch />
                 </button>
@@ -72,7 +66,7 @@ export const MisSemillas = () => {
               + AÑADIR ESPECIE
             </button>
           </div>
-          <TableSeeds/>
+          <TableSeeds />
         </section>
       </main>
       <Menu />

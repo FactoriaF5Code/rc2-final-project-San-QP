@@ -2,7 +2,8 @@ import "../styles/ModalNewSeed.css";
 import { IconClose } from "../assets/svg/IconClose";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import axios from "axios";
+import { SeedsService } from "../services/SeedsService";
+// import axios from "axios";
 
 export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -14,6 +15,7 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
   const [formNewSeed, setFormNewSeed] = useState(true);
   const [confirmMessage, setConfirmMessage] = useState(false);
 
+  const seedsService = new SeedsService();
 
   const hideFormNewSeed = () => {
     setFormNewSeed(false);
@@ -30,9 +32,7 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
   const postSeed = (e) => {
     e.preventDefault();
 
-    const url = "http://localhost:8080/api/seeds";
-
-    const data = {
+    const seedData = {
       name: newSeedName,
       origin: newSeedOrigin,
       pick_up_date: newPickUpDate,
@@ -40,23 +40,22 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
       description: newSeedDescription,
     };
 
-    axios
-      .post(url, data)
-      .then((response) => {
-        if (response.status === 201) {
-          setNewSeedName("");
-          setNewSeedOrigin("");
-          setNewPickUpDate("");
-          setNewSeedGeneration("");
-          setNewSeedDescription("");
-          hideFormNewSeed();
-          showConfirmMessage();
-          setNeedsReload(true);
-        }
-      })
-      .catch((error) => {
-        console.error("Error al enviar la solicitud:", error);
-      });
+    try {
+      const newSeed = seedsService.createSeed(seedData);
+      console.log("Semilla creada:", newSeed);
+
+      setNewSeedName("");
+      setNewSeedOrigin("");
+      setNewPickUpDate("");
+      setNewSeedGeneration("");
+      setNewSeedDescription("");
+      hideFormNewSeed();
+      showConfirmMessage();
+      setNeedsReload(true);
+
+    } catch (error) {
+      console.error("Error al crear la semilla:", error.message);
+    }
   };
 
   return (
