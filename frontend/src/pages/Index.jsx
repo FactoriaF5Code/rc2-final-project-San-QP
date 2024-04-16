@@ -10,7 +10,7 @@ export const Index = () => {
             src="/AppioLogo.svg"
             alt="Appio Logo Soberanía Alimentaria"
           />
-          <Link to="panel">INICIAR SESIÓN</Link>
+          <Link to="/login">INICIAR SESIÓN</Link>
         </div>
       </main>
     </>

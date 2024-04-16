@@ -2,7 +2,7 @@ import "../styles/MisSemillas.css";
 import { useContext } from "react";
 import { SeedsContext } from "../middleware/context/SeedsContext";
 
-export const TableSeeds = (/*{  noResults, searchTerm, deleteSeed }*/) => {
+export const TableSeeds = () => {
   const { seeds, loading, error, deleteSeed } = useContext(SeedsContext);
 
   const deleteSeedHandler = async (e, id) => {

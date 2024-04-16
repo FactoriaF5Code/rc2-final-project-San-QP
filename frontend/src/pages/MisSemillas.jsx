@@ -8,7 +8,6 @@ import { SeedsContext } from "../middleware/context/SeedsContext";
 import "../styles/MiHuerto.css";
 import "../styles/MisSemillas.css";
 import { useState, useEffect, useContext } from "react";
-// import axios from "axios";
 
 export const MisSemillas = () => {
   // eslint-disable-next-line no-unused-vars
@@ -32,7 +31,9 @@ export const MisSemillas = () => {
   return (
     <>
       {isModalOpen && (
-        <ModalNewSeed closeModal={closeModal} setNeedsReload={setNeedsReload} />
+        <ModalNewSeed
+          closeModal={closeModal}
+            setNeedsReload={setNeedsReload} />
       )}
       <header className="backLink">
         <BackHomeLink />
@@ -56,7 +57,10 @@ export const MisSemillas = () => {
           <div className="seedsOptions">
             <div className="seedsSearch">
               <div className="seedsOptions_searchContainer">
-                <input type="search" placeholder={"Buscar en mis semillas"} />
+                <input
+                  type="search"
+                  placeholder={"Buscar en mis semillas"}
+                />
                 <button type="submit" id="search">
                   <IconSearch />
                 </button>

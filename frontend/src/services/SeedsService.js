@@ -13,6 +13,16 @@ export class SeedsService {
         }
     }
 
+    async searchSeeds(query) {
+        const url = `http://localhost:8080/api/seeds/${query}`;
+        try {
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error) {
+            throw new Error(`Error fetching seeds with query "${query}": ${error.message}`);
+        }
+    }
+
     async deleteSeed(id) {
         try {
             const response = await axios.delete(`http://localhost:8080/api/seeds/${id}`);
