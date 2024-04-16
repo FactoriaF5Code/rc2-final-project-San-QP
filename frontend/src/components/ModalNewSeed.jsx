@@ -43,7 +43,7 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
     axios
       .post(url, data)
       .then((response) => {
-        if (response.status === 200) {
+        if (response.status === 201) {
           setNewSeedName("");
           setNewSeedOrigin("");
           setNewPickUpDate("");

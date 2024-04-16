@@ -1,0 +1,40 @@
+CREATE TABLE seeds (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    origin VARCHAR(255),
+    pick_up_date DATE,
+    generation INTEGER,
+    description VARCHAR(255)
+);
+
+INSERT INTO seeds (name, origin, pick_up_date, generation, description) 
+VALUES 
+('Tomate', 'Recogida', '2023-05-10', 1, 'Variedad indeterminada de tomate, resistente al tizón tardío. Ideal para sembrar en primavera y verano. Produce grandes tomates rojos sabrosos, perfectos para ensaladas y salsas.'),
+('Lechuga', 'Intercambio', NULL, NULL, 'Variedad de lechuga de crecimiento rápido y resistente a la sequía. Perfecta para sembrar en cualquier temporada excepto en verano. Las hojas verdes y crujientes son ideales para ensaladas frescas.'),
+('Zanahoria', 'Compra', NULL, NULL, 'Variedad dulce y jugosa de zanahoria. Pueden sembrarse en primavera y otoño. Las raíces naranjas son ideales para cocinar al vapor o en guisos.'),
+('Pepino', 'Recogida', '2023-04-01', 1, 'Variedad de pepino de crecimiento rápido. Perfecto para sembrar en primavera y verano. Produce frutos largos y verdes, ideales para ensaladas refrescantes y encurtidos.'),
+('Pimiento', 'Compra', NULL, NULL, 'Variedad de pimiento rojo dulce y picante. Pueden sembrarse en primavera y verano. Los pimientos son excelentes para asar, rellenar o agregar a platos salteados.'),
+('Brócoli', 'Intercambio', NULL, NULL, 'Variedad de brócoli resistente al frío. Pueden sembrarse en primavera y otoño. Las cabezas verdes y compactas son ricas en nutrientes y perfectas para cocinar al vapor o saltear.'),
+('Cebolla', 'Recogida', '2023-02-28', 1, 'Variedad de cebolla de bulbo grande y picante. Perfecta para sembrar en primavera y otoño. Ideal para cocinar, agregar a ensaladas o conservar en vinagre.'),
+('Espinaca', 'Intercambio', NULL, NULL, 'Variedad de espinaca de hojas grandes y resistentes al calor. Perfecta para sembrar en primavera y otoño. Las hojas verdes son excelentes para ensaladas o cocinar al vapor.'),
+('Patata', 'Compra', NULL, NULL, 'Variedad temprana y de piel fina de patata. Perfecta para sembrar en primavera. Las patatas son ideales para cocinar al horno, hervir o hacer puré.'),
+('Calabaza', 'Compra', NULL, NULL, 'Variedad de calabaza de carne anaranjada y dulce. Pueden sembrarse en primavera y verano. Las calabazas son excelentes para hornear, hacer sopas o postres.'),
+('Puerro', 'Intercambio', NULL, NULL, 'Variedad de puerro de tallos largos y dulces. Perfecta para sembrar en primavera y otoño. Ideal para sopas, guisos o como guarnición.'),
+('Escarola', 'Recogida', '2023-06-15', 1, 'Variedad de escarola de hojas rizadas y amargas. Perfecta para sembrar en primavera y otoño. Las hojas son excelentes para ensaladas o cocinar al vapor.'),
+('Calabacín', 'Compra', NULL, NULL, 'Variedad de calabacín de frutos tiernos y sabor suave. Perfecta para sembrar en primavera y verano. Los calabacines son excelentes para cocinar a la parrilla, saltear o rellenar.'),
+('Apio', 'Recogida', '2023-05-05', 1, 'Variedad de apio de tallos crujientes y aromáticos. Perfecta para sembrar en primavera y otoño. El apio es ideal para ensaladas, sopas o jugos.'),
+('Rábano', 'Compra', NULL, NULL, 'Variedad de rábano de raíces picantes y crujientes. Perfecta para sembrar en primavera y otoño. Ideal para ensaladas o como aperitivo.'),
+('Alcachofa', 'Recogida', '2023-04-20', 1, 'Variedad de alcachofa de corazones carnosos y sabrosos. Perfecta para sembrar en primavera. Las alcachofas son excelentes para cocinar al vapor, asar o agregar a platos de pasta.'),
+('Coliflor', 'Intercambio', NULL, NULL, 'Variedad de coliflor de cabezas blancas y compactas. Perfecta para sembrar en primavera y otoño. La coliflor es ideal para gratinar, cocinar al vapor o hacer puré.'),
+('Perejil', 'Compra', NULL, NULL, 'Variedad de perejil de hojas rizadas y aromáticas. Pueden sembrarse en primavera y otoño. Ideal para condimentar sopas, salsas, ensaladas o platos de pescado.'),
+('Ajo', 'Recogida', '2023-03-10', 1, 'Variedad de ajo de bulbos aromáticos y picantes. Perfecta para sembrar en otoño. Los bulbos son ideales para cocinar, asar o conservar en aceite.'),
+('Remolacha', 'Compra', NULL, NULL, 'Variedad de remolacha de raíces dulces y carnosas. Perfecta para sembrar en primavera y otoño. Ideales para ensaladas, sopas o como guarnición.'),
+('Maíz', 'Intercambio', NULL, NULL, 'Variedad de maíz de mazorcas dulces y jugosas. Perfecta para sembrar en primavera y verano. El maíz es ideal para asar, hervir o agregar a ensaladas.'),
+('Chirivía', 'Compra', NULL, NULL, 'Variedad de chirivía de raíces blancas y dulces. Perfecta para sembrar en primavera y otoño. Ideales para cocinar al horno, hervir o hacer puré.'),
+('Echalote', 'Intercambio', NULL, NULL, 'Variedad de echalote de bulbos pequeños con sabor a ajo y cebolla. Perfecta para sembrar en primavera y otoño. Ideales para agregar a guisos, salsas o como condimento.'),
+('Haba', 'Recogida', '2023-04-05', 1, 'Variedad de haba de legumbre verde y sabrosa. Perfecta para sembrar en primavera. Las habas son ideales para cocinar en guisos, sopas o como acompañamiento.'),
+('Rúcula', 'Compra', NULL, NULL, 'Variedad de rúcula de hojas verdes y picantes. Perfecta para sembrar en primavera y otoño. Ideal para ensaladas frescas, pizzas o como guarnición.'),
+('Judía Verde', 'Recogida', '2023-05-25', 1, 'Variedad de judía verde de vainas tiernas y dulces. Perfecta para sembrar en primavera y verano. Ideales para cocinar al vapor, saltear o agregar a ensaladas.'),
+('Berza', 'Intercambio', NULL, NULL, 'Variedad de berza de hojas verdes y resistentes al frío. Perfecta para sembrar en otoño e invierno. Las hojas son ideales para cocinar en sopas, guisos o como acompañamiento.'),
+('Pimiento de Padrón', 'Compra', NULL, NULL, 'Variedad de pimiento de Padrón de frutos pequeños y picantes. Perfecta para sembrar en primavera y verano. Ideales para freír y servir como tapa española.'),
+('Pepinillo', 'Intercambio', NULL, NULL, 'Variedad de pepinillo de mini pepinos para encurtir. Perfecta para sembrar en primavera y verano. Ideales para preparar encurtidos caseros o agregar a ensaladas.');

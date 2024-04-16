@@ -1,3 +1,7 @@
+Una aplicación para personas apasionadas del huerto. Comparte recursos y conocimientos: especies, cuidados, ciclos agrícolas, tratamiento de plagas...
+Conecta con otro/as cultivadores/as para resolver dudas, intercambiar semillas y compartir logros.
+Únete a nuestra comunidad y haz crecer tu huerto con Appio.
+
 # Descripción detallada
 Da tus primeros pasos hacia la autosuficiencia y la soberanía alimentaria con Appio: la aplicación para personas apasionadas del huerto.
 Appio te ayudará a tomar el control de tu consumo, impulsando un mundo más justo y sostenible.

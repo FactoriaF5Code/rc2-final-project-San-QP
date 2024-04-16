@@ -4,18 +4,18 @@ import { BackHomeLink } from "../components/BackHomeLink";
 import { IconSearch } from "../assets/svg/IconSearch";
 import { TableSeeds } from "../components/TableSeeds";
 import { ModalNewSeed } from "../components/ModalNewSeed";
+import { SeedsContext } from "../middleware/context/SeedsContext";
 import "../styles/MiHuerto.css";
 import "../styles/MisSemillas.css";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect, useContext } from "react";
+// import axios from "axios";
 
 export const MisSemillas = () => {
+  // eslint-disable-next-line no-unused-vars
+  const { seeds, setSeeds, showSeeds } = useContext(SeedsContext);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [dataSeeds, setDataSeeds] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
   const [needsReload, setNeedsReload] = useState(false);
-  const [noResults, setNoResults] = useState(false);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -25,59 +25,11 @@ export const MisSemillas = () => {
     setIsModalOpen(false);
   };
 
-  // Manejar la BÚSQUEDA
-  const handleSearch = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axios.get(
-        `http://localhost:8080/api/seeds/${searchTerm}`
-      );
-      setDataSeeds(response.data);
-      setNoResults(response.data.length === 0);
-    } catch (error) {
-      console.log("Error al realizar la búsqueda:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
-    handleSearch();
-  };
-
-  //Método GET para la tabla de semillas
   useEffect(() => {
-    const getDataFromDatabase = async () => {
-      try {
-        const response = await axios.get("http://localhost:8080/api/seeds");
-        console.log("Datos de la respuesta:", response.data);
-        setDataSeeds(response.data);
-        // setNeedsReload(true);
-      } catch (error) {
-        console.log("Error al obtener datos:", error);
-      }
-    };
-    getDataFromDatabase();
-  }, [needsReload]);
+    showSeeds();
+}, [needsReload]);
 
-  //Método DELETE para la tabla de semillas
-  const deleteSeed = async (e, id) => {
-    e.preventDefault();
-  
-    try {
-      const response = await axios.delete(`http://localhost:8080/api/seeds/${id}`);
-      if (response.status === 200) {
-        console.log("Semilla eliminada con éxito.");
-        window.location.reload();
-      } else {
-        console.error("Error al eliminar la semilla. Estado de respuesta:", response.status);
-      }
-    } catch (error) {
-      console.error("Error al eliminar la semilla:", error);
-    }
-  };
-  
 
   return (
     <>
@@ -109,13 +61,9 @@ export const MisSemillas = () => {
                 <input
                   type="search"
                   placeholder={"Buscar en mis semillas"}
-                  value={searchTerm}
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                    handleChange(e);
-                  }}
+                  
                 />
-                <button type="submit" id="search" onClick={handleSearch}>
+                <button type="submit" id="search">
                   <IconSearch />
                 </button>
               </div>
@@ -124,12 +72,7 @@ export const MisSemillas = () => {
               + AÑADIR ESPECIE
             </button>
           </div>
-          <TableSeeds
-            dataSeeds={dataSeeds}
-            noResults={noResults}
-            searchTerm={searchTerm}
-            deleteSeed={deleteSeed}
-          />
+          <TableSeeds/>
         </section>
       </main>
       <Menu />

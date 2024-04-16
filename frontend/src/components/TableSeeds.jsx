@@ -1,17 +1,36 @@
 import "../styles/MisSemillas.css";
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { SeedsContext } from "../middleware/context/SeedsContext";
 
-export const TableSeeds = ({ dataSeeds, noResults, searchTerm, deleteSeed }) => {
-  const reversedDataSeeds = [...dataSeeds].reverse();
+export const TableSeeds = (/*{  noResults, searchTerm, deleteSeed }*/) => {
+  const { seeds, loading, error, deleteSeed } = useContext(SeedsContext);
+
+  //Método DELETE para la tabla de semillas
+  const deleteSeedHandler= async (e, id) => {
+    e.preventDefault();
+  
+    try {
+      await deleteSeed(id);
+      console.log("Semilla eliminada con éxito.");
+      // Actualizar el estado o realizar cualquier acción adicional si es necesario
+    } catch (error) {
+      console.error("Error al eliminar la semilla:", error);
+    }
+  };
+  
 
   return (
     <div className="seeds">
       MIS SEMILLAS
-      {noResults && <p>No se encuentran resultados para la búsqueda &quot;{searchTerm}&quot;.</p>}
-      {!noResults && <div className="seedsTable">
-        {reversedDataSeeds &&
-          reversedDataSeeds.map((seed, index) => (
-            <ul className="seedsRow" key={index}>
+      {loading && <p>Cargando...</p>}
+      {error && <p>Ocurrió un error al cargar los datos de las semillas.</p>}
+      {!loading && !error && seeds.length === 0 && (
+        <p>No se encontraron semillas.</p>
+      )}
+      {!loading && !error && seeds.length > 0 && (
+        <div className="seedsTable">
+          {seeds.map((seed) => (
+            <ul className="seedsRow" key={seed.id}>
               <li className="seedsRow_Name">{seed.name}</li>
               <div className="seedsRow_Props">
                 <li className="seedsRow_Props_Item">Origen: {seed.origin}</li>
@@ -27,17 +46,15 @@ export const TableSeeds = ({ dataSeeds, noResults, searchTerm, deleteSeed }) => 
                 )}
               </div>
               <ul className="seedsRow_Options">
-                <li onClick={(e) => deleteSeed(e, seed.id)}>Borrar</li>
-                <li >Modificar</li>
+                <li onClick={(e) => deleteSeedHandler(e, seed.id)}>Borrar</li>
+                <li>Modificar</li>
                 <li>Ver</li>
               </ul>
             </ul>
           ))}
-      </div>}
+        </div>
+      )}
     </div>
   );
 };
 
-TableSeeds.propTypes = {
-  dataSeeds: PropTypes.arrayOf(PropTypes.object).isRequired,
-};

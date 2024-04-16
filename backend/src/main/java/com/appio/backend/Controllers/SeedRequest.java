@@ -7,7 +7,6 @@ import java.util.Date;
 
 import com.appio.backend.Persistence.Seed;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
