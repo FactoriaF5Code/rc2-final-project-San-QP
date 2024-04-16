@@ -2,7 +2,6 @@ import axios from "axios";
 
 export class SeedsService {
 
-    
     async showSeeds() {
         const url = "http://localhost:8080/api/seeds";
         try {

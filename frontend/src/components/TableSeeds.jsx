@@ -5,19 +5,15 @@ import { SeedsContext } from "../middleware/context/SeedsContext";
 export const TableSeeds = (/*{  noResults, searchTerm, deleteSeed }*/) => {
   const { seeds, loading, error, deleteSeed } = useContext(SeedsContext);
 
-  //Método DELETE para la tabla de semillas
-  const deleteSeedHandler= async (e, id) => {
+  const deleteSeedHandler = async (e, id) => {
     e.preventDefault();
-  
     try {
       await deleteSeed(id);
       console.log("Semilla eliminada con éxito.");
-      // Actualizar el estado o realizar cualquier acción adicional si es necesario
     } catch (error) {
       console.error("Error al eliminar la semilla:", error);
     }
   };
-  
 
   return (
     <div className="seeds">
@@ -29,7 +25,7 @@ export const TableSeeds = (/*{  noResults, searchTerm, deleteSeed }*/) => {
       )}
       {!loading && !error && seeds.length > 0 && (
         <div className="seedsTable">
-          {seeds.map((seed) => (
+          {seeds.slice().reverse().map((seed) => (
             <ul className="seedsRow" key={seed.id}>
               <li className="seedsRow_Name">{seed.name}</li>
               <div className="seedsRow_Props">
@@ -57,4 +53,3 @@ export const TableSeeds = (/*{  noResults, searchTerm, deleteSeed }*/) => {
     </div>
   );
 };
-

@@ -1,9 +1,9 @@
 import "../styles/ModalNewSeed.css";
 import { IconClose } from "../assets/svg/IconClose";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import PropTypes from "prop-types";
-import { SeedsService } from "../services/SeedsService";
-// import axios from "axios";
+// import { SeedsService } from "../services/SeedsService";
+import { SeedsContext } from "../middleware/context/SeedsContext";
 
 export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -15,7 +15,9 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
   const [formNewSeed, setFormNewSeed] = useState(true);
   const [confirmMessage, setConfirmMessage] = useState(false);
 
-  const seedsService = new SeedsService();
+  const { createSeed } = useContext(SeedsContext);
+
+  // const seedsService = new SeedsService();
 
   const hideFormNewSeed = () => {
     setFormNewSeed(false);
@@ -41,7 +43,7 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
     };
 
     try {
-      const newSeed = seedsService.createSeed(seedData);
+      const newSeed = createSeed(seedData);
       console.log("Semilla creada:", newSeed);
 
       setNewSeedName("");
@@ -52,7 +54,6 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
       hideFormNewSeed();
       showConfirmMessage();
       setNeedsReload(true);
-
     } catch (error) {
       console.error("Error al crear la semilla:", error.message);
     }
