@@ -2,25 +2,26 @@ import { Link } from "react-router-dom";
 import { Menu } from "../../components/Menu/Menu";
 import { BackHomeLink } from "../../components/BackHomeLink";
 import { AdvertCard } from "../../components/AdvertCard/AdvertCard";
+import { AdvertsService } from "../../services/AdvertsService";
 import "../MiHuerto/MiHuerto.css";
 import "./Comunidad.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 export const Comunidad = () => {
   const [dataAdverts, setDataAdverts] = useState([]);
 
   useEffect(() => {
-    const getAdvertsFromDatabase = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/adverts");
-        console.log("Datos de la respuesta:", response.data);
-        setDataAdverts(response.data);
+        const advertsService = new AdvertsService();
+        const advertsData = await advertsService.showAdverts();
+        setDataAdverts(advertsData);
       } catch (error) {
-        console.log("Error al obtener datos:", error);
+        console.log("Error fetching adverts:", error);
       }
     };
-    getAdvertsFromDatabase();
+
+    fetchData();
   }, []);
 
   return (
