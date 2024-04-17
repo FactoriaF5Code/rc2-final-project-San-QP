@@ -1,9 +1,9 @@
-package com.appio.backend.Controllers;
+package com.appio.backend.Controllers.Seed;
 
 import java.util.Date;
 import java.util.Optional;
 
-import com.appio.backend.Persistence.Seed;
+import com.appio.backend.Persistence.Seed.Seed;
 
 import java.text.SimpleDateFormat;
 

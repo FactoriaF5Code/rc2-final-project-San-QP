@@ -1,4 +1,4 @@
-package com.appio.backend.Services;
+package com.appio.backend.Services.Seed;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.appio.backend.Controllers.SeedRequest;
-import com.appio.backend.Controllers.SeedResponse;
-import com.appio.backend.Persistence.Seed;
-import com.appio.backend.Persistence.SeedRepository;
+import com.appio.backend.Controllers.Seed.SeedRequest;
+import com.appio.backend.Controllers.Seed.SeedResponse;
+import com.appio.backend.Persistence.Seed.Seed;
+import com.appio.backend.Persistence.Seed.SeedRepository;
 
 @Service
 public class SeedService {

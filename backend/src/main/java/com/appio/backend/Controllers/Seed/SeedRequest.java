@@ -1,11 +1,11 @@
-package com.appio.backend.Controllers;
+package com.appio.backend.Controllers.Seed;
 
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.appio.backend.Persistence.Seed;
+import com.appio.backend.Persistence.Seed.Seed;
 
 import lombok.Getter;
 import lombok.Setter;

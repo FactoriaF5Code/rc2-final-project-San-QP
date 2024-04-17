@@ -5,7 +5,6 @@ const SeedsContext = createContext();
 
 export const SeedsProvider = ({ children }) => {
   const [seeds, setSeeds] = useState([]);
-  // const [searchSeedsResult, setSearchSeedsResult] = useState([]);
 
   const seedsService = new SeedsService();
 

@@ -1,4 +1,4 @@
-package com.appio.backend.Persistence;
+package com.appio.backend.Persistence.Seed;
 
 import java.util.Date;
 

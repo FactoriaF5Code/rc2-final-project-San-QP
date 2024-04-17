@@ -1,4 +1,4 @@
-package com.appio.backend.Controllers;
+package com.appio.backend.Controllers.Seed;
 
 import java.util.List;
 
@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 
-
-import com.appio.backend.Persistence.Seed;
-import com.appio.backend.Persistence.SeedRepository;
-import com.appio.backend.Services.SeedService;
+import com.appio.backend.Persistence.Seed.Seed;
+import com.appio.backend.Persistence.Seed.SeedRepository;
+import com.appio.backend.Services.Seed.SeedService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
