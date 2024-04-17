@@ -3,7 +3,7 @@ import './AdvertCard.css'
 
 export const AdvertCard = ({advert, index}) => {
   return (
-    <Link to="advert">
+    <Link to={`advert/${advert.seed.id}`}>
     <article className="advertCardContainer">
       <div className="advertCardImage">
         <img src={advert.url_img} alt="foto_semillas" />

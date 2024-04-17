@@ -44,6 +44,7 @@
     font-weight: 700;
     color: var(--color-dark-green);
     margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 
 .contactButton {

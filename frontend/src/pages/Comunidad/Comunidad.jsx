@@ -2,27 +2,18 @@ import { Link } from "react-router-dom";
 import { Menu } from "../../components/Menu/Menu";
 import { BackHomeLink } from "../../components/BackHomeLink";
 import { AdvertCard } from "../../components/AdvertCard/AdvertCard";
-import { AdvertsService } from "../../services/AdvertsService";
+// import { AdvertsService } from "../../services/AdvertsService";
+import { AdvertsContext } from "../../middleware/context/AdvertsContext";
 import "../MiHuerto/MiHuerto.css";
 import "./Comunidad.css";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 
 export const Comunidad = () => {
-  const [dataAdverts, setDataAdverts] = useState([]);
+  const {adverts, showAdverts, setAdverts} = useContext(AdvertsContext);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const advertsService = new AdvertsService();
-        const advertsData = await advertsService.showAdverts();
-        setDataAdverts(advertsData);
-      } catch (error) {
-        console.log("Error fetching adverts:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    showAdverts();
+}, [showAdverts]);
 
   return (
     <>
@@ -31,7 +22,7 @@ export const Comunidad = () => {
       </header>
       <main className="comunidadAppio">
         <section className="comunidadAppio_logo">
-          <Link to="/mi-huerto">
+          <Link to="/comunidad">
             <img
               src="/ComunidadAppio.svg"
               alt="Comunidad Appio"
@@ -40,8 +31,8 @@ export const Comunidad = () => {
           </Link>
         </section>
         <section className="adverts">
-          {dataAdverts &&
-            dataAdverts.map((advert, index) => (
+          {adverts &&
+            adverts.map((advert, index) => (
               <AdvertCard key={index} advert={advert} />
             ))}
         </section>

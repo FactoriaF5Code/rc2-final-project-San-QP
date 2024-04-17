@@ -8,13 +8,14 @@ import { SeedsProvider } from "../context/SeedsContext";
 import { Comunidad } from "../../pages/Comunidad/Comunidad";
 import { UnderConstruction } from "../../pages/UnderConstruction/UnderConstruction";
 import { AdvertPage } from "../../pages/AdvertPage/AdvertPage";
+import { AdvertsProvider } from "../context/AdvertsContext";
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route path="login" element={<Login/>} />
+        <Route path="login" element={<Login />} />
         <Route path="panel" element={<Panel />} />
         <Route path="mi-huerto" element={<MiHuerto />} />
         <Route
@@ -25,8 +26,22 @@ export const AppRouter = () => {
             </SeedsProvider>
           }
         />
-        <Route path="comunidad" element={<Comunidad />} />
-        <Route path="comunidad/advert" element={<AdvertPage/>} />
+        <Route
+          path="comunidad"
+          element={
+            <AdvertsProvider>
+              <Comunidad />
+            </AdvertsProvider>
+          }
+        />
+        <Route
+          path="comunidad/advert/:advertId"
+          element={
+            <AdvertsProvider>
+              <AdvertPage />
+            </AdvertsProvider>
+          }
+        />
         <Route path="wait-for-it" element={<UnderConstruction />} />
       </Routes>
     </BrowserRouter>

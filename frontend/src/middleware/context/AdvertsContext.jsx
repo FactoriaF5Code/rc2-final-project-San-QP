@@ -4,27 +4,29 @@ import { AdvertsService } from "../../services/AdvertsService";
 const AdvertsContext = createContext();
 
 export const AdvertsProvider = ({ children }) => {
-  const [advert, setAdvert] = useState([]);
+  const [adverts, setAdverts] = useState([]);
 
   const advertsService = new AdvertsService();
 
   const showAdverts = async () => {
     try {
-      const data = await advertsService.showAdverts();
-      console.log("Datos de la respuesta de adverts en context", data);
-      setAdvert(data);
+      const dataAdverts = await advertsService.showAdverts();
+      console.log("Datos de la respuesta de adverts en context", dataAdverts);
+      setAdverts(dataAdverts);
     } catch (error) {
       console.error("Error al obtener los datos de adverts en context", error);
     }
   };
 
   const value = {
-    advert,
+    adverts,
     showAdverts,
-    setAdvert,
+    setAdverts,
   };
 
-  return <AdvertsContext.Provider value={value}></AdvertsContext.Provider>;
+  return (
+    <AdvertsContext.Provider value={value}>{children}</AdvertsContext.Provider>
+  );
 };
 
 export { AdvertsContext };
