@@ -1,0 +1,51 @@
+.advertCardContainer{
+    width: 22rem;
+    margin-bottom:4rem;
+}
+
+.advertCardImage {
+    object-fit: cover;
+    max-width: 22rem;
+    height: 22rem;
+    border-radius: 2rem;
+    border: 0.2rem solid var(--color-fluor-green);
+    box-shadow: var(--effect-box-shadow);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.advertCardImage img {
+    width: 22rem;
+}
+
+.advertCardText  {
+    padding-top:1.6rem;
+}
+
+.advertCardText h2 {
+    font-size: 1.6rem;
+    color: var(--color-dark-green);
+    font-weight: 700;
+}
+
+.advertCardText p {
+    font-size: 1.5rem;
+    color: #1E1E1E;
+    font-weight: 600;
+}
+
+@media (width <= 768px) {
+    .advertCardContainer {
+        width: 16rem;
+        margin-bottom: 3rem;
+    }
+
+    .advertCardImage {
+        max-width: 16rem;
+        height: 16rem;
+    }
+
+    .advertCardImage img {
+        width: 16rem;
+    }
+}

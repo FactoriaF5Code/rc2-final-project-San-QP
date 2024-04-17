@@ -1,0 +1,51 @@
+.comunidadAppio {
+    min-height: 100vh;
+    background-color: var(--color-light);
+    background-image: url('/fondo-comunidad.jpg');
+    background-position:top;
+    background-blend-mode:overlay;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+.comunidadAppio_logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:3rem;
+}
+
+.comunidadAppio_logo img {
+    width: 36rem;
+}
+
+@media (width <= 768px) {
+    .comunidadAppio{
+        gap:4rem;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+    .comunidadAppio_logo {
+        margin-top: 6rem;
+    }
+
+    .comunidadAppio_logo img {
+        width: calc(100vw - 6rem);
+    }
+}
+
+.adverts {
+    display: flex;
+    max-width: 120rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (width <= 768px) {
+    .adverts{
+        width: calc(100vw - 6rem);
+    }
+}

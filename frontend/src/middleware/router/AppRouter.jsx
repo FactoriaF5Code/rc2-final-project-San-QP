@@ -5,6 +5,7 @@ import { Panel } from "../../pages/Panel/Panel";
 import { MiHuerto } from "../../pages/MiHuerto/MiHuerto";
 import { MisSemillas } from "../../pages/MisSemillas/MisSemillas";
 import { SeedsProvider } from "../context/SeedsContext";
+import { Comunidad } from "../../pages/Comunidad/Comunidad";
 import { UnderConstruction } from "../../pages/UnderConstruction/UnderConstruction";
 
 export const AppRouter = () => {
@@ -23,6 +24,7 @@ export const AppRouter = () => {
             </SeedsProvider>
           }
         />
+        <Route path="comunidad" element={<Comunidad />} />
         <Route path="wait-for-it" element={<UnderConstruction />} />
       </Routes>
     </BrowserRouter>

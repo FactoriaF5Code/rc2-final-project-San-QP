@@ -27,11 +27,11 @@ export const MiHuerto = () => {
         <section className="panel_MiHuerto_buttons">
           <div className="fondo_semillas">
             <Link to="mis-semillas">
-              <img src="/semillas.jpg" alt="" />
+              <img src="/semillas.jpg" alt="foto semillas" />
               <p>MIS SEMILLAS</p>
             </Link>
             <Link to="/wait-for-it">
-              <img src="/mis-cultivos.jpg" alt="" />
+              <img src="/mis-cultivos.jpg" alt="foto cultivo" />
               <p>MIS CULTIVOS</p>
             </Link>
           </div>
