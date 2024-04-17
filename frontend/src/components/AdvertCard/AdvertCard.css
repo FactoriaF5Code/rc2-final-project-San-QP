@@ -44,8 +44,12 @@
         max-width: 16rem;
         height: 16rem;
     }
-
+    
     .advertCardImage img {
         width: 16rem;
+    }
+    
+    .advertCardText {
+        padding-top:1rem;
     }
 }

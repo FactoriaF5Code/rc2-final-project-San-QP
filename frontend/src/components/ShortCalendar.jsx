@@ -8,7 +8,7 @@ export const ShortCalendar = () => {
         <p className="moonPhase">CRECIENTE</p>
         <div className="date">
           <hr />
-          <h3>19 de marzo</h3>
+          <h3>19 de abril</h3>
           <p>PRIMAVERA</p>
         </div>
       </div>

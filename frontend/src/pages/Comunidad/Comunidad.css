@@ -47,5 +47,6 @@
 @media (width <= 768px) {
     .adverts{
         width: calc(100vw - 6rem);
+        margin-bottom:12rem;
     }
 }

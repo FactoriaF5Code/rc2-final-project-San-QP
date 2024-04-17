@@ -1,14 +1,14 @@
 import './AdvertCard.css'
 
-export const AdvertCard = () => {
+export const AdvertCard = ({advert, index}) => {
   return (
     <article className="advertCardContainer">
       <div className="advertCardImage">
-        <img src="/semillas.jpg" alt="foto_semillas" />
+        <img src={advert.url_img} alt="foto_semillas" />
       </div>
       <div className="advertCardText">
-        <h2>Nombre semilla</h2>
-        <p>Origen: Recogida</p>
+        <h2>{advert.seed.name}</h2>
+        <p>{advert.seed.origin}</p>
       </div>
     </article>
   );
