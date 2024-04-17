@@ -1,0 +1,58 @@
+.singleAdvert{
+    max-width:120rem;
+    height: fit-content;
+    display: flex;
+    gap:6rem;
+}
+
+.singleAdvertImg{
+    object-fit: cover;
+    max-width: 48.5rem;
+    height: 48.5rem;
+    border-radius: 2.3rem;
+    border: 0.2rem solid var(--color-fluor-green);
+    box-shadow: var(--effect-box-shadow);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.singleAdvertImg img{
+    width:48.5rem;
+}
+
+.singleAdvertInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.singleAdvertInfo h2{
+    font-size: 3.4rem;
+    color:var(--color-dark-green);
+    font-weight: 700;
+
+}
+
+.singleAdvertDescription{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color:#1E1E1E;
+}
+
+.singleAdvertDetails{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark-green);
+    margin-bottom: 2rem;
+}
+
+.contactButton {
+    background-color: var(--color-fluor-green);
+    color:var(--color-dark-green);
+    font-size: 1.8rem;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    padding:1.6rem 6rem;
+}

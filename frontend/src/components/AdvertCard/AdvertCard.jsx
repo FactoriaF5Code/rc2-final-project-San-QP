@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import './AdvertCard.css'
 
 export const AdvertCard = ({advert, index}) => {
   return (
+    <Link to="advert">
     <article className="advertCardContainer">
       <div className="advertCardImage">
         <img src={advert.url_img} alt="foto_semillas" />
@@ -11,5 +13,6 @@ export const AdvertCard = ({advert, index}) => {
         <p>{advert.seed.origin}</p>
       </div>
     </article>
+    </Link>
   );
 };

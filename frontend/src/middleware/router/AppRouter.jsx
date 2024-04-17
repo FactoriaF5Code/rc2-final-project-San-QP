@@ -7,6 +7,7 @@ import { MisSemillas } from "../../pages/MisSemillas/MisSemillas";
 import { SeedsProvider } from "../context/SeedsContext";
 import { Comunidad } from "../../pages/Comunidad/Comunidad";
 import { UnderConstruction } from "../../pages/UnderConstruction/UnderConstruction";
+import { AdvertPage } from "../../pages/AdvertPage/AdvertPage";
 
 export const AppRouter = () => {
   return (
@@ -25,6 +26,7 @@ export const AppRouter = () => {
           }
         />
         <Route path="comunidad" element={<Comunidad />} />
+        <Route path="comunidad/advert" element={<AdvertPage/>} />
         <Route path="wait-for-it" element={<UnderConstruction />} />
       </Routes>
     </BrowserRouter>
