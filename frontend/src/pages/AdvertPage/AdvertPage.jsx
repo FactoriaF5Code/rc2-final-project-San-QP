@@ -17,6 +17,7 @@ export const AdvertPage = () => {
     const [seedDescription, setSeedDescription] = useState("");
     const [seedOrigin, setSeedOrigin] = useState("");
     const [seedUser, setSeedUser] = useState("");
+    const [seedImg, setSeedImg] = useState("");
 
     useEffect(() => {
         const advert = adverts.find((advert) => advert.id === Number(advertId));
@@ -25,6 +26,7 @@ export const AdvertPage = () => {
             setSeedOrigin(advert.seed.origin);
             setSeedDescription(advert.advert_description);
             setSeedUser(advert.user.name);
+            setSeedImg(advert.url_img);
         }
     }, [advertId, adverts]);
   
@@ -34,11 +36,11 @@ export const AdvertPage = () => {
 
     return (
     <>
-      <header className="backLink">
+      <header className="backLinkAdvert">
         <BackHomeLink />
       </header>
       <main className="comunidadAppio">
-        <section className="comunidadAppio_logo">
+        <section className="comunidadAppio_logoAdvert">
           <Link to="/comunidad">
             <img
               src="/ComunidadAppio.svg"
@@ -49,7 +51,7 @@ export const AdvertPage = () => {
         </section>
         <section className="singleAdvert">
           <div className="singleAdvertImg">
-            <img src="/semillas.jpg" alt="" />
+            <img src={seedImg} alt={seedName} />
           </div>
           <div className="singleAdvertInfo">
             <div>
@@ -59,7 +61,7 @@ export const AdvertPage = () => {
             </div>
             <div>
               <p className="singleAdvertDetails">USUARIO: {seedUser}</p>
-              <button className="fluorButton" onClick={contactUser}>CONTACTAR</button>
+              <button className="contactButton" onClick={contactUser}>CONTACTAR</button>
             </div>
           </div>
         </section>
