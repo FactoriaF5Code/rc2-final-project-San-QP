@@ -3,6 +3,7 @@ package com.appio.backend.Persistence.Seed;
 import java.util.Date;
 
 import com.appio.backend.Persistence.Advert.Advert;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -32,6 +33,7 @@ public class Seed {
     private String description;
 
     @OneToOne(mappedBy = "seed", cascade = CascadeType.ALL)
+    @JsonIgnore 
     private Advert advert;
 
     public Seed(String name, String origin, Date pick_up_date, Integer generation, String description) {

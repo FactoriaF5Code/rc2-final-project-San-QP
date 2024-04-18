@@ -2,6 +2,7 @@ package com.appio.backend.Persistence.Advert;
 
 import com.appio.backend.Persistence.Seed.Seed;
 import com.appio.backend.Persistence.User.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -31,6 +32,7 @@ public class Advert {
     
     @OneToOne
     @JoinColumn(name = "seed_id" )
+    @JsonBackReference
     private Seed seed;
 
     @Column(name = "advert_description")
