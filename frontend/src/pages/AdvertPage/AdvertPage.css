@@ -36,12 +36,19 @@
 
 
 .iconClose {
-    position: absolute;
-    right: 0;
-    margin: 2rem;
-    fill: var(--color-dark-green);
-    background:none;
-    border: none;
+    display: none;
+}
+
+@media (width <=768px) {
+    .iconClose {
+        display: block;
+        position: absolute;
+        right: 0;
+        margin: 2rem;
+        fill: var(--color-dark-green);
+        background:none;
+        border: none;
+    }
 }
 
 .singleAdvert {
@@ -106,7 +113,10 @@
         border: none;
         box-shadow: none;
         height: 25.5rem;
-        object-position: 50% 100%;
+    }
+    
+    .singleAdvertImg img{
+        width: 100vw;
     }
 
     .singleAdvertInfo {
