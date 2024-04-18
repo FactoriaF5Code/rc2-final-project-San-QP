@@ -57,3 +57,12 @@ cd backend
 mvn spring-boot:run
 ```
 ---
+
+# Screenshots
+![01](/frontend/public/screenshot-01.png)
+![02](/frontend/public/screenshot-02.png)
+![03](/frontend/public/screenshot-03.png)
+![04](/frontend/public/screenshot-04.png)
+![05](/frontend/public/screenshot-05.png)
+![06](/frontend/public/screenshot-06.png)
+![07](/frontend/public/screenshot-07.png)
