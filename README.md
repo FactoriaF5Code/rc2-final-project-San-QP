@@ -64,5 +64,7 @@ mvn spring-boot:run
 ![03](/frontend/public/screenshot-03.png)
 ![04](/frontend/public/screenshot-04.png)
 ![05](/frontend/public/screenshot-05.png)
+![05a](/frontend/public/screenshot-05a.png)
+![05b](/frontend/public/screenshot-05b.png)
 ![06](/frontend/public/screenshot-06.png)
 ![07](/frontend/public/screenshot-07.png)
