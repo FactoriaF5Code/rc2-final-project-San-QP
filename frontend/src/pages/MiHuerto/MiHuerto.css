@@ -147,6 +147,10 @@
         width: 30rem;
         font-weight: 600;
     }
+
+    .panel_MiHuerto_buttons p:hover{
+        background-color: #00d16c;
+    }
     
 }
 
@@ -163,9 +167,14 @@
     cursor: pointer;
 }
 
+.fluorButton:hover {
+    background-color: #00d16c;
+}
+
 @media (width <= 768px) {
     .fluorButton{
         max-width: 29rem;
         font-size: 1.8rem;
     }
+
 }

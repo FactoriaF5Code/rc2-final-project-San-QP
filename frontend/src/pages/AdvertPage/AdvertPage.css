@@ -34,6 +34,16 @@
     }
 }
 
+
+.iconClose {
+    position: absolute;
+    right: 0;
+    margin: 2rem;
+    fill: var(--color-dark-green);
+    background:none;
+    border: none;
+}
+
 .singleAdvert {
     max-width: 120rem;
     height: fit-content;
@@ -120,6 +130,10 @@
     padding: 0 4rem;
     border-radius: 1rem;
     cursor: pointer;
+}
+
+.contactButton:hover{
+    background-color: #00d16c;
 }
 
 @media (width <=768px) {

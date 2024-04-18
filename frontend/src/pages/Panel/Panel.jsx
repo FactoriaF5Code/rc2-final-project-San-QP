@@ -1,6 +1,6 @@
 // import { MainNav } from "../components/MainNav";
 import { Menu } from "../../components/Menu/Menu";
-import { ShortCalendar } from "../../components/ShortCalendar";
+import { ShortCalendar } from "../../components/ShortCalendar/ShortCalendar";
 import "./Panel.css";
 
 export const Panel = () => {

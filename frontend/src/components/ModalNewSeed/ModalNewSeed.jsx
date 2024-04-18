@@ -16,8 +16,6 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
 
   const { createSeed } = useContext(SeedsContext);
 
-  // const seedsService = new SeedsService();
-
   const hideFormNewSeed = () => {
     setFormNewSeed(false);
   };

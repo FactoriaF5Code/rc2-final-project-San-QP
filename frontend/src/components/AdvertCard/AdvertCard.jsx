@@ -1,9 +1,16 @@
-import { Link } from 'react-router-dom'
-import './AdvertCard.css'
+import './AdvertCard.css';
+import { useNavigate } from 'react-router-dom';
 
 export const AdvertCard = ({advert, index}) => {
+  const navigate = useNavigate();
+
+  const openAdvertInfo = () => {
+    navigate(`advert/${advert.id}`);
+}
+
   return (
-    <Link to={`advert/${advert.seed.id}`}>
+    <>
+    <button className='advertLink' onClick={openAdvertInfo}>
     <article className="advertCardContainer">
       <div className="advertCardImage">
         <img src={advert.url_img} alt="foto_semillas" />
@@ -13,6 +20,7 @@ export const AdvertCard = ({advert, index}) => {
         <p>{advert.seed.origin}</p>
       </div>
     </article>
-    </Link>
+    </button>
+    </>
   );
 };

@@ -1,6 +1,7 @@
-import "../pages/MisSemillas/MisSemillas.css";
+import "../../pages/MisSemillas/MisSemillas.css";
+import "./TableSeeds.css"
 import { useContext } from "react";
-import { SeedsContext } from "../middleware/context/SeedsContext";
+import { SeedsContext } from "../../middleware/context/SeedsContext";
 
 export const TableSeeds = () => {
   const { seeds, loading, error, deleteSeed } = useContext(SeedsContext);

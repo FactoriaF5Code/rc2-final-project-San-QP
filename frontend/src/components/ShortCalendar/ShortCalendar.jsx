@@ -1,4 +1,5 @@
-import "../pages/Panel/Panel.css";
+import "../../pages/Panel/Panel.css";
+import "./ShortCalendar.css"
 
 export const ShortCalendar = () => {
   return (

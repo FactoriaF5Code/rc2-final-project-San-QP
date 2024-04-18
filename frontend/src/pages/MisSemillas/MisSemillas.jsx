@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Menu } from "../../components/Menu/Menu";
 import { BackHomeLink } from "../../components/BackHomeLink";
 import { IconSearch } from "../../assets/svg/IconSearch";
-import { TableSeeds } from "../../components/TableSeeds";
+import { TableSeeds } from "../../components/TableSeeds/TableSeeds";
 import { ModalNewSeed } from "../../components/ModalNewSeed/ModalNewSeed";
 import { SeedsContext } from "../../middleware/context/SeedsContext";
 import "../MiHuerto/MiHuerto.css";

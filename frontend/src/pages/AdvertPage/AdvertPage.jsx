@@ -2,10 +2,10 @@ import "../MiHuerto/MiHuerto.css";
 import "../Comunidad/Comunidad.css";
 import "./AdvertPage.css";
 import { BackHomeLink } from "../../components/BackHomeLink";
+import {IconClose} from "../../assets/svg/IconClose"
 import { Menu } from "../../components/Menu/Menu";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-// import { AdvertsService } from "../../services/AdvertsService";
 import { AdvertsContext } from "../../middleware/context/AdvertsContext";
 
 
@@ -24,7 +24,7 @@ export const AdvertPage = () => {
         if (advert) {
             setSeedName(advert.seed.name);
             setSeedOrigin(advert.seed.origin);
-            setSeedDescription(advert.advert_description);
+            setSeedDescription(advert.seed.description);
             setSeedUser(advert.user.name);
             setSeedImg(advert.url_img);
         }
@@ -33,6 +33,10 @@ export const AdvertPage = () => {
     const contactUser = () => {
         navigate("/wait-for-it");
     }
+
+    const closeAdvert = () => {
+      navigate("/comunidad");
+  }
 
     return (
     <>
@@ -51,6 +55,7 @@ export const AdvertPage = () => {
         </section>
         <section className="singleAdvert">
           <div className="singleAdvertImg">
+            <button className="iconClose" onClick={closeAdvert}><IconClose /></button>
             <img src={seedImg} alt={seedName} />
           </div>
           <div className="singleAdvertInfo">
@@ -66,6 +71,7 @@ export const AdvertPage = () => {
           </div>
         </section>
       </main>
+      
       <Menu />
     </>
   );

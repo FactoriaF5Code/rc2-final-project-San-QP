@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { Menu } from "../../components/Menu/Menu";
 import { BackHomeLink } from "../../components/BackHomeLink";
 import { AdvertCard } from "../../components/AdvertCard/AdvertCard";
+import { AdvertPage } from "../AdvertPage/AdvertPage";
 // import { AdvertsService } from "../../services/AdvertsService";
 import { AdvertsContext } from "../../middleware/context/AdvertsContext";
 import "../MiHuerto/MiHuerto.css";
 import "./Comunidad.css";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 
 export const Comunidad = () => {
   const {adverts, showAdverts, setAdverts} = useContext(AdvertsContext);
@@ -36,6 +37,8 @@ export const Comunidad = () => {
               <AdvertCard key={index} advert={advert} />
             ))}
         </section>
+        <section>
+      </section>
       </main>
       <Menu />
     </>
