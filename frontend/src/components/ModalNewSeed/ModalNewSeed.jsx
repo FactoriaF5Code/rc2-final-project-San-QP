@@ -13,8 +13,20 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
   const [newSeedGeneration, setNewSeedGeneration] = useState("");
   const [formNewSeed, setFormNewSeed] = useState(true);
   const [confirmMessage, setConfirmMessage] = useState(false);
+  const [error, setError] = useState(false);
+
 
   const { createSeed } = useContext(SeedsContext);
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    if (newSeedName.trim() === "") {
+      setError(true);
+    } else {
+      setError(false);
+      postSeed(e);
+    }
+};
 
   const hideFormNewSeed = () => {
     setFormNewSeed(false);
@@ -76,7 +88,7 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
           </div>
         </div>
       )}
-      {formNewSeed && (
+      {formNewSeed && !confirmMessage && (
         <div className="newSeed_Modal">
           <header className="newSeed_Modal_Header">
             <h1>Nueva especie</h1>
@@ -93,10 +105,10 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
                   className="seedName"
                   onChange={(e) => setNewSeedName(e.target.value)}
                 />
+                {error && <p className="errorMessage">* Campo obligatorio</p>}
                 <fieldset className="newSeed_Modal_Content_Form_InputsProps">
                   <div className="inputProps_From">
-                    <label htmlFor="">¿De dónde vienen tus semillas?</label>
-
+                    <label>¿De dónde vienen tus semillas?</label>
                     <select
                       className="seedFrom"
                       value={selectedOption}
@@ -145,7 +157,7 @@ export const ModalNewSeed = ({ closeModal, setNeedsReload }) => {
                 </fieldset>
               </section>
               <div className="newSeed_Modal_Content_Form_Button">
-                <button type="submit" className="fluorButton" id="saveButton">
+                <button type="submit" className="fluorButton" id="saveButton" onClick={handleSend}>
                   GUARDAR
                 </button>
               </div>
