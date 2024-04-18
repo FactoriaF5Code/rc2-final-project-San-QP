@@ -16,6 +16,20 @@ export const Comunidad = () => {
     showAdverts();
 }, [showAdverts]);
 
+console.log('Tipo de adverts:', typeof adverts);
+  console.log('Datos de adverts:', adverts);
+
+  // Check if adverts is null or undefined
+  if (!adverts) {
+    return <p>Loading...</p>; // Display a loading indicator
+  }
+
+  // Check if adverts is an array
+  if (!Array.isArray(adverts)) {
+    console.error('Adverts is not an array:', adverts);
+    return <p>Error: Adverts data is not in the expected format.</p>;
+  }
+
   return (
     <>
       <header className="backLink">

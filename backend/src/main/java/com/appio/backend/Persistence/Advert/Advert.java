@@ -3,6 +3,7 @@ package com.appio.backend.Persistence.Advert;
 import com.appio.backend.Persistence.Seed.Seed;
 import com.appio.backend.Persistence.User.User;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,8 +28,9 @@ public class Advert {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    
     @OneToOne
-    @JoinColumn(name = "seed_id")
+    @JoinColumn(name = "seed_id" )
     private Seed seed;
 
     @Column(name = "advert_description")

@@ -13,16 +13,15 @@ export class SeedsService {
         }
     }
 
-    // async searchSeeds(query) {
-    //     const url = `http://localhost:8080/api/seeds/${query}`;
-    //     try {
-    //         setIsLoading(true);
-    //         const response = await axios.get(url);
-    //         return response.data;
-    //     } catch (error) {
-    //         throw new Error(`Error fetching seeds with query "${query}": ${error.message}`);
-    //     }
-    // }
+    async searchSeeds(query) {
+        const url = `http://localhost:8080/api/seeds/${query}`;
+        try {
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error) {
+            throw new Error(`Error fetching seeds with query "${query}": ${error.message}`);
+        }
+    }
 
     async deleteSeed(id) {
         try {

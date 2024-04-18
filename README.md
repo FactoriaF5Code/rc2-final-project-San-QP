@@ -28,13 +28,12 @@ Da tus primeros pasos hacia la autosuficiencia y la soberanía alimentaria con A
 ## Other:
 ![PostgreSQL](    https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 
 ---
 
 # Installation
-## FRONTEND
+### FRONTEND
 To install node modules inside the frontend folder run:
 
 ```
@@ -51,9 +50,10 @@ To run the application inside of the fronted folder run:
 ```
 npm run dev
 ```
-## BACKEND
+### BACKEND
 To run the application inside the bakcend folder run:
 ```
 cd backend 
 mvn spring-boot:run
 ```
+---

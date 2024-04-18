@@ -18,7 +18,6 @@ export const TableSeeds = () => {
 
   return (
     <div className="seeds">
-      MIS SEMILLAS
       {loading && <p>Cargando...</p>}
       {error && <p>Ocurrió un error al cargar los datos de las semillas.</p>}
       {!loading && !error && seeds.length === 0 && (

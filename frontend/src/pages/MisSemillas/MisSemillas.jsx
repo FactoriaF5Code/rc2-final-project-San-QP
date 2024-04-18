@@ -55,17 +55,9 @@ export const MisSemillas = () => {
         </section>
         <section className="seedsMain">
           <div className="seedsOptions">
-            <div className="seedsSearch">
-              <div className="seedsOptions_searchContainer">
-                <input
-                  type="search"
-                  placeholder={"Buscar en mis semillas"}
-                />
-                <button type="submit" id="search">
-                  <IconSearch />
-                </button>
-              </div>
-            </div>
+            <h1 className="seedsTitle">
+            MIS SEMILLAS
+            </h1>
             <button className="fluorButton" onClick={openModal}>
               + AÑADIR ESPECIE
             </button>

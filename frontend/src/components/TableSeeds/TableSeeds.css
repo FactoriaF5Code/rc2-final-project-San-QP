@@ -3,7 +3,7 @@
     font-size: 2.1rem;
     color: var(--color-dark-green);
     font-weight: 500;
-    margin: 6rem 0;
+    margin: 6rem 0 12rem 0;
     padding: 0 6rem;
     max-height: 50rem;
     overflow-y: scroll;
@@ -14,7 +14,7 @@
     .seeds {
         max-width: 100vw;
         padding: 0 2rem;
-        margin: 6rem 0rem;
+        margin: 4rem 0rem;
     }
 }
 

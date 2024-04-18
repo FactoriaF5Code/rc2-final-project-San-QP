@@ -26,27 +26,14 @@
     .seedsOptions {
         flex-direction: column;
         align-items: center;
-        margin: 5rem 2rem 0;
-        gap: 5rem;
+        margin: 5rem 2rem 0rem 2rem;
+        gap: 3rem;
     }
 }
 
-/*Estilo BUSCADOR*/
-.seedsSearch {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.seedsOptions_searchContainer{
-    border: 1px solid #1E1E1E;
-    border-radius: 1rem;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding: 1.4rem;
-    gap: 2rem;
-    width: 37rem;
+.seedsTitle {
+    font-size: 3rem ;
+    color:var(--color-dark-green);
 }
 
 @media (width <= 768px) {
@@ -55,31 +42,6 @@
         margin: 0 2rem;
     }
 } 
-
-.seedsOptions_searchContainer input{
-    border: none;
-    outline: none;
-    width: 100%;
-}
-
-.seedsOptions_searchContainer input::placeholder{
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #363636;
-}
-
-#search {
-    background: none;
-    border: none;
-    display: flex;
-}
-
-.seedsSearch button {
-    border: none;
-    background: transparent;
-    fill:var(--color-dark-green);
-    opacity: 60%;
-}
 
 .seedsOptions input{
     background-color: transparent;

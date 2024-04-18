@@ -72,8 +72,7 @@ class SeedsTests {
 
                 seedRepository.saveAll(List.of(
                                 new Seed("Zanahoria", "Compra", null, null,
-                                                "Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado.")
-                ));
+                                                "Zanahoria de piel suave y color naranja rojizo. Buena productividad media cultivada a gran escala y con buena adaptación para almacenado.")));
 
                 api.perform(get("/api/seeds/{query}", query))
                                 .andExpectAll(
@@ -88,30 +87,30 @@ class SeedsTests {
         }
 
         @Test
-    public void creates_new_seed() throws Exception {
-        String requestBody = "{\"name\":\"Lechuga\",\"origin\":\"Compra\",\"pick_up_date\":null,\"generation\":null,\"description\":\"Lechuga iceberg, crujiente. De crecimiento rápido\"}";
+        public void creates_new_seed() throws Exception {
+                String requestBody = "{\"name\":\"Lechuga\",\"origin\":\"Compra\",\"pick_up_date\":null,\"generation\":null,\"description\":\"Lechuga iceberg, crujiente. De crecimiento rápido\"}";
 
-        api.perform(post("/api/seeds")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(requestBody))
-            .andExpectAll(
-                status().isCreated(),
-                jsonPath("$.name", equalTo("Lechuga")),
-                jsonPath("$.origin", equalTo("Compra")),
-                jsonPath("$.pick_up_date", equalTo(null)),
-                jsonPath("$.generation", equalTo(null)),
-                jsonPath("$.description", equalTo("Lechuga iceberg, crujiente. De crecimiento rápido")));
-    }
+                api.perform(post("/api/seeds")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(requestBody))
+                                .andExpectAll(
+                                                status().isCreated(),
+                                                jsonPath("$.name", equalTo("Lechuga")),
+                                                jsonPath("$.origin", equalTo("Compra")),
+                                                jsonPath("$.pick_up_date", equalTo(null)),
+                                                jsonPath("$.generation", equalTo(null)),
+                                                jsonPath("$.description", equalTo(
+                                                                "Lechuga iceberg, crujiente. De crecimiento rápido")));
+        }
 
-    @Test
-    public void delete_existing_seed_by_id() throws Exception{
-        Seed savedSeed = seedRepository.save(new Seed("Espinaca", "Intercambio", null, null, "Espiga tarde, aguanta mucho tiempo sin florecer"));
+        @Test
+        public void delete_existing_seed_by_id() throws Exception {
+                Seed savedSeed = seedRepository.save(new Seed("Espinaca", "Intercambio", null, null,
+                                "Espiga tarde, aguanta mucho tiempo sin florecer"));
 
-        api.perform(delete("/api/seeds/" + savedSeed.getId()))
-            .andExpect(status().isNoContent());
+                api.perform(delete("/api/seeds/" + savedSeed.getId()))
+                                .andExpect(status().isNoContent());
 
-    }
+        }
 
 }
-
-
