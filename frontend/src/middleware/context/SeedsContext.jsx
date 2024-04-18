@@ -44,8 +44,6 @@ export const SeedsProvider = ({ children }) => {
     setSeeds,
     deleteSeed,
     createSeed,
-    // searchSeeds,
-    // searchSeedsResult,
   };
 
   return (

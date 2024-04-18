@@ -2,10 +2,14 @@ package com.appio.backend.Persistence.Seed;
 
 import java.util.Date;
 
+import com.appio.backend.Persistence.Advert.Advert;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +30,9 @@ public class Seed {
     private Date pick_up_date;
     private Integer generation;
     private String description;
+
+    @OneToOne(mappedBy = "seed", cascade = CascadeType.ALL)
+    private Advert advert;
 
     public Seed(String name, String origin, Date pick_up_date, Integer generation, String description) {
         this.name = name;
