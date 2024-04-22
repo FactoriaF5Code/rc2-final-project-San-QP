@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  list-style: none;
+  text-decoration: none;
+  scrollbar-color: #122925 #E6E5CE;
+  scrollbar-width:thin;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+:root {
+  --font-family: 'Supreme', sans-serif;
+  --title-font-family: 'Bespoke Stencil', sans-serif;
+  --color-light: #d0d3ab;
+  --color-dark-green: #122925;
+  --color-fluor-green: #00FF85;
+  --color-red: #DE1D20;
+  --effect-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}

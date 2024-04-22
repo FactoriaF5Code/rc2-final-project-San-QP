@@ -1,0 +1,60 @@
+.panel {
+    background-color: var(--color-light);
+    background-image: url('/index-background.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-blend-mode:overlay;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.panelContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 120rem;
+    gap: 6rem;
+}
+
+/*Estilos de cabecera: logo y párrafo de introducción*/
+.panelContent_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.panelContent_title img {
+    margin: 3rem;
+    max-width: 20rem;
+}
+
+.panelContent_title p {
+    font-size: 1.8rem;
+    max-width: 50rem;
+    text-align: center;
+}
+
+@media (width <=768px) {
+    .panelContent {
+        gap: 2rem!important;
+    }
+   
+    .panelContent_title {
+        align-items: flex-start;
+        margin: 0 2rem;
+    }
+
+    .panelContent_title img {
+        margin: 3.2rem 0 1.5rem 0;
+        max-width: 13.6rem;
+    }
+
+    .panelContent_title p {
+        text-align: left;
+        font-size: 1.6rem;
+    }
+}
